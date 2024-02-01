@@ -2,10 +2,7 @@
 	import { Separator } from '$lib/components/ui/separator';
 </script>
 
-<nav
-	class="fixed hidden h-screen w-[var(--sidebar-width)] flex-[0.5] bg-secondary p-5 md:block"
-	style="font-family: Roboto"
->
+<nav class="fixed hidden h-screen w-[var(--sidebar-width)] flex-[0.5] bg-secondary p-5 md:block">
 	<h1 class="text-2xl">Collections</h1>
 
 	<Separator class="my-5" />
