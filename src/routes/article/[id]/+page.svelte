@@ -1,65 +1,114 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button/button.svelte';
-	import Input from '$lib/components/ui/input/input.svelte';
-	import * as Select from '$lib/components/ui/select/index.js';
-	import Textarea from '$lib/components/ui/textarea/textarea.svelte';
-
+	import * as Form from '$lib/components/ui/form';
+	import type { Selected } from 'bits-ui';
+	import { formSchema, type FormSchema } from './schema';
 	export let data;
+	import type { FormOptions } from 'formsnap';
+	import { Check, Reload } from 'radix-icons-svelte';
 
-	let selected = {
-		value: data.article.articleCategory.id,
-		label: data.article.articleCategory.name
+	let form = data.form;
+
+	let selected: Selected<any> = {
+		value: data.article?.articleCategory.id as string,
+		label: data.article?.articleCategory.name as string
 	};
+
+	const options: FormOptions<FormSchema> = {
+		onSubmit() {
+			loading = true;
+			console.log(form);
+		},
+		onResult({ result }) {
+			loading = false;
+			if (result.status === 200) alert('Success!');
+			if (result.status === 400) alert('Error!');
+		}
+	};
+
+	let loading = false;
 </script>
 
-<form
-	method="post"
+<Form.Root
+	method="POST"
 	action={data.id === 'new' ? '?/create' : '?/update'}
 	class="grid max-w-[460px] gap-4"
+	{form}
+	{options}
+	schema={formSchema}
+	let:config
+	on:input={(e) => console.log(form)}
 >
 	<div class="mb-4 flex justify-between">
 		<span class="text-xl font-semibold">Articles :</span>
 		<div>
-			<Button disabled={true} type="submit" value="publish" class="text-sm">Publish</Button>
-			<Button type="submit" value="save" class="text-sm">Save</Button>
+			<Form.Button disabled={!data.id} type="submit" value="publish" class="text-sm">
+				<Check class="mr-2 h-3 w-3" />
+				{#if loading}
+					Publish
+				{:else}
+					Un-Publish
+				{/if}
+			</Form.Button>
+			<Form.Button type="submit" value="save" class="text-sm" disabled={loading}>
+				{#if loading}
+					<Reload class="mr-2 h-3 w-3 animate-spin" />
+				{/if}
+				Save</Form.Button
+			>
 		</div>
 	</div>
-	<Input type="text" placeholder="Title" name="articleTitle" value={data.article.articleTitle} />
-	<Select.Root bind:selected>
-		<Select.Trigger class="w-[180px]">
-			<Select.Value placeholder="Select a Category" />
-		</Select.Trigger>
-		<Select.Content>
-			<Select.Group>
-				<Select.Label>Categories</Select.Label>
-				{#each data.categories as category}
-					<Select.Item value={category.id}>{category.name}</Select.Item>
-				{/each}
-			</Select.Group>
-		</Select.Content>
-		<Select.Input name="articleCategoryId" />
-	</Select.Root>
-	<Input
-		type="text"
-		placeholder="Image Path"
-		name="articleImageSrc"
-		value={data.article.articleImageSrc}
-	/>
-	<Input
-		type="text"
-		placeholder="Image Alt"
-		name="articleImageAlt"
-		value={data.article.articleImageAlt}
-	/>
-	<Input
-		type="text"
-		placeholder="Image Title"
-		name="articleImageTitle"
-		value={data.article.articleImageTitle}
-	/>
-	<Textarea
-		placeholder="Short Description"
-		name="articleShortDescription"
-		value={data.article.articleShortDescription}
-	/>
-</form>
+	<Form.Field {config} name="articleTitle">
+		<Form.Item>
+			<Form.Label>Title</Form.Label>
+			<Form.Input value={data.article?.articleTitle} />
+			<Form.Validation />
+		</Form.Item>
+	</Form.Field>
+	<Form.Field {config} name="articleCategoryId">
+		<Form.Item>
+			<Form.Label>Category:</Form.Label>
+			<Form.Select bind:selected>
+				<Form.SelectTrigger placeholder="Select a Category" />
+				<Form.SelectContent>
+					<Form.SelectGroup>
+						<Form.SelectLabel>Categories</Form.SelectLabel>
+						{#each data.categories as category}
+							<Form.SelectItem value={category.id}>{category.name}</Form.SelectItem>
+						{/each}
+					</Form.SelectGroup>
+				</Form.SelectContent>
+			</Form.Select>
+		</Form.Item>
+	</Form.Field>
+	<Form.Field {config} name="articleImageSrc">
+		<Form.Item>
+			<Form.Label>Image Path</Form.Label>
+			<Form.Input value={data.article?.articleImageSrc} />
+			<Form.Validation />
+		</Form.Item>
+	</Form.Field>
+	<Form.Field {config} name="articleImageAlt">
+		<Form.Item>
+			<Form.Label>Image Alt</Form.Label>
+			<Form.Input value={data.article?.articleImageAlt} />
+			<Form.Validation />
+		</Form.Item>
+	</Form.Field>
+	<Form.Field {config} name="articleImageTitle">
+		<Form.Item>
+			<Form.Label>Image Title</Form.Label>
+			<Form.Input value={data.article?.articleImageTitle} />
+			<Form.Validation />
+		</Form.Item>
+	</Form.Field>
+	<Form.Field {config} name="articleShortDescription">
+		<Form.Item>
+			<Form.Label>Short Description</Form.Label>
+			<Form.Textarea
+				placeholder="Short Description"
+				value={data.article?.articleShortDescription}
+			/>
+			<Form.Validation />
+		</Form.Item>
+	</Form.Field>
+</Form.Root>
