@@ -11,17 +11,17 @@ datasource db {
 }
 
 model article {
-  id                      String   @id @default(uuid())
+  id                      String    @id @default(uuid())
   articleIsActive         Boolean
-  articleTitle            String   @db.VarChar(255)
-  articleImageSrc         String   @db.VarChar(255)
-  articleShortDescription String   @db.VarChar(255)
-  articlePublishDate      DateTime
-  articleHrefURL          String   @db.VarChar(255)
-  articleImageTitle       String   @db.VarChar(255)
-  articleImageAlt         String   @db.VarChar(255)
-  createdAt               DateTime @default(now())
-  updatedAt               DateTime @updatedAt
+  articleTitle            String    @db.VarChar(255)
+  articleImageSrc         String    @db.VarChar(255)
+  articleShortDescription String    @db.VarChar(255)
+  articlePublishDate      DateTime?
+  articleHrefURL          String    @db.VarChar(255)
+  articleImageTitle       String    @db.VarChar(255)
+  articleImageAlt         String    @db.VarChar(255)
+  createdAt               DateTime  @default(now())
+  updatedAt               DateTime  @updatedAt
 
   articleCategory   category? @relation(fields: [articleCategoryId], references: [id])
   articleCategoryId String?
@@ -29,7 +29,7 @@ model article {
 
 model category {
   id   String @id @default(uuid())
-  name String @db.VarChar(255)
+  name String @unique @db.VarChar(255)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

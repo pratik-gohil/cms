@@ -16,8 +16,11 @@
 		</Button>
 	</a>
 </div>
+
 <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
 	{#each data.articles as article}
-		<ArticleCard {article} />
+		<a href={'/article/' + article.id}>
+			<ArticleCard {article} />
+		</a>
 	{/each}
 </div>

@@ -9,7 +9,7 @@
 
 	<ul>
 		<li>
-			<a href="/articles">Article</a>
+			<a href="/article/all">Article</a>
 		</li>
 		<li>
 			<a href="/article-categories">Article Category</a>

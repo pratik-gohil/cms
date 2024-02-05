@@ -1,12 +1,9 @@
-import prisma from "$lib/prisma"
+import { BASE_URL } from "$env/static/private";
 import type { ArticleWithCategory } from "$lib/types/Article"
 
 export async function load(): Promise<{ articles: ArticleWithCategory[] }> {
-    const articles = await prisma.article.findMany({
-        include: {
-            articleCategory: true
-        }
-    })
+    const response = await fetch(BASE_URL + '/api/article/all')
+    const { articles } = await response.json();
 
     return { articles }
 }

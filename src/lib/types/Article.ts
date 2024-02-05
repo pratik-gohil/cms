@@ -1,8 +1,10 @@
 export type ArticleCategory = {
+	id: String;
 	name: String;
 }
 
 export type Article = {
+	id: String;
 	articleIsActive: boolean;
 	articleSortOrder: number;
 	articleTitle: string;
