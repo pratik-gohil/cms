@@ -2,11 +2,11 @@
 	import * as Form from '$lib/components/ui/form';
 	import type { Selected } from 'bits-ui';
 	import { formSchema, type FormSchema } from './schema';
-	export let data;
 	import type { FormOptions } from 'formsnap';
 	import { Check, Reload } from 'radix-icons-svelte';
 
-	let form = data.form;
+	export let data;
+	$: ({ form } = data);
 
 	let selected: Selected<any> = {
 		value: data.article?.articleCategory.id as string,
@@ -14,13 +14,12 @@
 	};
 
 	const options: FormOptions<FormSchema> = {
-		onSubmit() {
+		async onSubmit() {
 			loading = true;
-			console.log(form);
 		},
 		onResult({ result }) {
 			loading = false;
-			if (result.status === 200) alert('Success!');
+			if (result.status === 204) alert('Success!');
 			if (result.status === 400) alert('Error!');
 		}
 	};
@@ -36,20 +35,25 @@
 	{options}
 	schema={formSchema}
 	let:config
-	on:input={(e) => console.log(form)}
 >
 	<div class="mb-4 flex justify-between">
 		<span class="text-xl font-semibold">Articles :</span>
 		<div>
-			<Form.Button disabled={!data.id} type="submit" value="publish" class="text-sm">
+			<Form.Button
+				disabled={data.id === 'new' || loading}
+				type="submit"
+				name="publish"
+				value={(!data.article?.articleIsActive).toString()}
+				class="text-sm"
+			>
 				<Check class="mr-2 h-3 w-3" />
-				{#if loading}
-					Publish
-				{:else}
+				{#if data.article?.articleIsActive}
 					Un-Publish
+				{:else}
+					Publish
 				{/if}
 			</Form.Button>
-			<Form.Button type="submit" value="save" class="text-sm" disabled={loading}>
+			<Form.Button type="submit" class="text-sm" disabled={loading}>
 				{#if loading}
 					<Reload class="mr-2 h-3 w-3 animate-spin" />
 				{/if}
@@ -60,7 +64,7 @@
 	<Form.Field {config} name="articleTitle">
 		<Form.Item>
 			<Form.Label>Title</Form.Label>
-			<Form.Input value={data.article?.articleTitle} />
+			<Form.Input />
 			<Form.Validation />
 		</Form.Item>
 	</Form.Field>
@@ -83,31 +87,28 @@
 	<Form.Field {config} name="articleImageSrc">
 		<Form.Item>
 			<Form.Label>Image Path</Form.Label>
-			<Form.Input value={data.article?.articleImageSrc} />
+			<Form.Input />
 			<Form.Validation />
 		</Form.Item>
 	</Form.Field>
 	<Form.Field {config} name="articleImageAlt">
 		<Form.Item>
 			<Form.Label>Image Alt</Form.Label>
-			<Form.Input value={data.article?.articleImageAlt} />
+			<Form.Input />
 			<Form.Validation />
 		</Form.Item>
 	</Form.Field>
 	<Form.Field {config} name="articleImageTitle">
 		<Form.Item>
 			<Form.Label>Image Title</Form.Label>
-			<Form.Input value={data.article?.articleImageTitle} />
+			<Form.Input />
 			<Form.Validation />
 		</Form.Item>
 	</Form.Field>
 	<Form.Field {config} name="articleShortDescription">
 		<Form.Item>
 			<Form.Label>Short Description</Form.Label>
-			<Form.Textarea
-				placeholder="Short Description"
-				value={data.article?.articleShortDescription}
-			/>
+			<Form.Textarea placeholder="Short Description" />
 			<Form.Validation />
 		</Form.Item>
 	</Form.Field>
