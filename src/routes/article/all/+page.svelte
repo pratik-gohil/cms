@@ -17,7 +17,7 @@
 	</a>
 </div>
 
-<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
+<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
 	{#each data.articles as article}
 		<a href={'/article/' + article.id}>
 			<ArticleCard {article} />

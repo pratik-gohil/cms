@@ -1,6 +1,6 @@
 import prisma from "$lib/prisma";
 import { slugify } from "$lib/utils";
-import { fail, redirect } from "@sveltejs/kit";
+import { redirect } from "@sveltejs/kit";
 
 import { BASE_URL } from "$env/static/private";
 import type { ArticleCategory, ArticleWithCategory } from "$lib/types/Article"

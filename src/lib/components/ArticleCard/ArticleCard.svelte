@@ -4,6 +4,7 @@
 	export let article: ArticleWithCategory;
 
 	import { Badge } from '$lib/components/ui/badge';
+	import { cn } from '$lib/utils';
 </script>
 
 <div class="relative h-full rounded border p-4">
@@ -20,4 +21,15 @@
 	<span class="absolute bottom-4 right-4 text-xs text-gray-500"
 		>{new Date(article.articlePublishDate).toDateString()}</span
 	>
+
+	<span
+		class={cn('absolute bottom-full left-0 rounded-t-md px-4 py-0.5 text-xs font-medium', {
+			'bg-blue-200': !article.articleIsActive,
+			'bg-green-200': article.articleIsActive,
+			'text-blue-800': !article.articleIsActive,
+			'text-green-800': article.articleIsActive
+		})}
+	>
+		{article.articleIsActive ? 'Published' : 'Draft'}
+	</span>
 </div>

@@ -8,7 +8,8 @@ export async function GET() {
             articleShortDescription: true,
             articlePublishDate: true,
             articleImageSrc: true,
-            articleCategory: true
+            articleCategory: true,
+            articleIsActive: true,
         }
     })
 
