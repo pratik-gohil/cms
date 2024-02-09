@@ -1,6 +1,6 @@
 import prisma from "$lib/prisma";
 import { slugify } from "$lib/utils";
-import { redirect } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
 
 import { BASE_URL } from "$env/static/private";
 import type { ArticleCategory, ArticleWithCategory } from "$lib/types/Article"
@@ -12,16 +12,22 @@ import { Prisma } from "@prisma/client";
 import type { RequestEvent } from "./$types";
 import { writeFileSync } from "fs";
 
-export async function load({ params }: LoadEvent): Promise<{ id: String | undefined, categories: ArticleCategory[], article: ArticleWithCategory, form: SuperValidated<FormSchema> }> {
+export async function load({ params }: LoadEvent): Promise<{ id: String | undefined, categories: ArticleCategory[], article?: ArticleWithCategory, form: SuperValidated<FormSchema> }> {
     const categoryResponse = await fetch(BASE_URL + '/api/categories')
     const { categories } = await categoryResponse.json();
 
-    const articleResponse = await fetch(BASE_URL + "/api/article/" + params.id)
-    const { article } = await articleResponse.json();
-
+    let article
     let form;
-    const formSchema = getFormSchemaWithDefaults(article)
-    form = await superValidate(formSchema)
+    let formSchemaWithDefaults;
+    if (params.id !== "new") {
+        const articleResponse = await fetch(BASE_URL + "/api/article/" + params.id)
+        article = (await articleResponse.json()).article;
+
+        formSchemaWithDefaults = getFormSchemaWithDefaults(article)
+    }
+
+    form = await superValidate(formSchemaWithDefaults || formSchema)
+
 
     return { id: params.id, categories, article, form }
 }
@@ -63,78 +69,117 @@ const handleActionError = async (formData: FormData) => {
 
 export const actions = {
     create: async (event: RequestEvent) => {
-        const formData = await event.request.formData()
-        await handleActionError(formData)
+        let success = false;
+        let article;
 
-        const { articleTitle,
-            articleImageSrc,
-            articleImageAlt,
-            articleImageTitle,
-            articleShortDescription,
-            articleIsActive, articleHrefURL, articleCategoryId, articleContents } = retriveArticleData(formData);
+        try {
+            const formData = await event.request.formData()
+            await handleActionError(formData)
 
-        const article = await prisma.article.create({
-            data: {
-                articleContents,
-                articleTitle,
+            const { articleTitle,
                 articleImageSrc,
-                articleHrefURL,
                 articleImageAlt,
                 articleImageTitle,
                 articleShortDescription,
-                articleIsActive,
-                articleCategory: {
-                    connect: {
-                        id: articleCategoryId
+                articleIsActive, articleHrefURL, articleCategoryId, articleContents } = retriveArticleData(formData);
+
+            article = await prisma.article.create({
+                data: {
+                    articleContents,
+                    articleTitle,
+                    articleImageSrc,
+                    articleHrefURL,
+                    articleImageAlt,
+                    articleImageTitle,
+                    articleShortDescription,
+                    articleIsActive,
+                    articleCategory: {
+                        connect: {
+                            id: articleCategoryId
+                        }
                     }
-                }
 
-            },
-        })
+                },
+            })
 
-        actionResult('redirect', '/article/' + article.id, 303);
-
-        throw redirect(303, '/article/' + article.id)
-    },
-    update: async (event: RequestEvent) => {
-        const formData = await event.request.formData()
-        const form = await handleActionError(formData);
-
-        const { articleTitle,
-            articleImageSrc,
-            articleImage,
-            articleImageAlt,
-            articleImageTitle,
-            articleShortDescription,
-            articleHrefURL, articleCategoryId, publish, articleContents } = retriveArticleData(formData);
-
-        if (articleImage && articleImage.size > 0) {
-            writeFileSync(`static/articles/${articleImage.name}`, Buffer.from(await articleImage.arrayBuffer()));
+            actionResult('redirect', '/article/' + article.id, 303);
+            success = true;
+        } catch (err) {
+            success = false;
+            console.log(err)
         }
 
-        await prisma.article.update({
-            where: {
-                id: event.params.id
-            },
-            data: {
-                articleContents,
-                articleTitle,
-                articleHrefURL,
-                ...(articleImage && articleImage.size > 0 && {
-                    articleImageSrc,
-                    articleImageAlt,
-                    articleImageTitle
-                }),
-                articleShortDescription,
-                articleIsActive: publish,
-                articleCategory: {
-                    connect: {
-                        id: articleCategoryId
-                    }
-                },
-            },
-        })
-
-        actionResult('success', { form });
+        if (success) {
+            throw redirect(303, '/article/' + article.id)
+        } else {
+            return fail(400);
+        }
     },
+    update: async (event: RequestEvent) => {
+        try {
+            const formData = await event.request.formData()
+            const form = await handleActionError(formData);
+
+            const { articleTitle,
+                articleImageSrc,
+                articleImage,
+                articleImageAlt,
+                articleImageTitle,
+                articleShortDescription,
+                articleHrefURL, articleCategoryId, publish, articleContents } = retriveArticleData(formData);
+
+            if (articleImage && articleImage.size > 0) {
+                writeFileSync(`static/articles/${articleImage.name}`, Buffer.from(await articleImage.arrayBuffer()));
+            }
+
+            await prisma.article.update({
+                where: {
+                    id: event.params.id
+                },
+                data: {
+                    articleContents,
+                    articleTitle,
+                    articleHrefURL,
+                    ...(articleImage && articleImage.size > 0 && {
+                        articleImageSrc,
+                        articleImageAlt,
+                        articleImageTitle
+                    }),
+                    articleShortDescription,
+                    articleIsActive: publish,
+                    articleCategory: {
+                        connect: {
+                            id: articleCategoryId
+                        }
+                    },
+                },
+            })
+
+            actionResult('success', { form });
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    delete: async (event: RequestEvent) => {
+        let success = false;
+        try {
+            await prisma.article.delete({
+                where: {
+                    id: event.params.id
+                }
+            })
+
+            actionResult('redirect', '/article/all', 303);
+            success = true;
+        } catch (err) {
+            success = false;
+            console.log(err)
+        }
+
+        if (success) {
+            throw redirect(303, '/article/all')
+        } else {
+            return fail(400);
+        }
+    }
 };

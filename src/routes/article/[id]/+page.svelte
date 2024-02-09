@@ -3,8 +3,10 @@
 	import type { Selected } from 'bits-ui';
 	import { formSchema, type FormSchema } from './schema';
 	import type { FormOptions } from 'formsnap';
-	import { Check, Reload } from 'radix-icons-svelte';
+	import { Check, Reload, Trash } from 'radix-icons-svelte';
 	import { onMount } from 'svelte';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import { Separator } from '$lib/components/ui/separator';
 
 	export let data;
 	$: ({ form } = data);
@@ -49,7 +51,7 @@
 			placeholder: 'Write your story...'
 		});
 
-		quill.root.innerHTML = data.article.articleContents;
+		quill.root.innerHTML = data.article?.articleContents || '';
 
 		quill.on('text-change', function () {
 			articleContents.value = quill.root.innerHTML;
@@ -74,7 +76,7 @@
 <Form.Root
 	method="POST"
 	action={data.id === 'new' ? '?/create' : '?/update'}
-	class="container grid gap-4"
+	class="grid gap-4"
 	{form}
 	{options}
 	schema={formSchema}
@@ -180,12 +182,12 @@
 								on:change={(e) => onFileSelected(e)}
 							/>
 						</label>
-						{#if articleImage || data.article.articleImageSrc}
+						{#if articleImage || data.article?.articleImageSrc}
 							<img
 								alt="aticleImage"
 								class="max-h-44 w-full flex-1 sm:w-1/2 lg:w-full"
 								src={(articleImage && articleImage.toString()) ||
-									'/articles/' + data.article.articleImageSrc}
+									'/articles/' + data.article?.articleImageSrc}
 							/>
 						{/if}
 					</div>
@@ -206,6 +208,22 @@
 					<Form.Validation />
 				</Form.Item>
 			</Form.Field>
+		</div>
+		<div class="flex flex-[.4] flex-col gap-4 bg-secondary p-4">
+			<h1 class="font-semibold">Information:</h1>
+			<Separator />
+			<p class="text-secondary-foreground">
+				Create At: {data.article?.createdAt ? new Date(data.article.createdAt).toDateString() : '-'}
+			</p>
+			<p class="text-secondary-foreground">
+				Publish At: {data.article?.createdAt
+					? new Date(data.article.createdAt).toDateString()
+					: '-'}
+			</p>
+
+			<Button type="submit" formaction="?/delete" variant="destructive"
+				>Delete Article <Trash size={20} /></Button
+			>
 		</div>
 	</div>
 	<div class="mb-20">
