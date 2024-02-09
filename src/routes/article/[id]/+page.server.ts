@@ -28,6 +28,7 @@ export async function load({ params }: LoadEvent): Promise<{ id: String | undefi
 
 const retriveArticleData = (formData: FormData) => {
     let data: Prisma.articleCreateInput & { articleImage?: File, articleCategoryId?: string, __superform_id?: string, publish?: boolean } = {
+        articleContents: "",
         articleTitle: "",
         articleImageSrc: "",
         articleHrefURL: "",
@@ -70,10 +71,11 @@ export const actions = {
             articleImageAlt,
             articleImageTitle,
             articleShortDescription,
-            articleIsActive, articleHrefURL, articleCategoryId } = retriveArticleData(formData);
+            articleIsActive, articleHrefURL, articleCategoryId, articleContents } = retriveArticleData(formData);
 
         const article = await prisma.article.create({
             data: {
+                articleContents,
                 articleTitle,
                 articleImageSrc,
                 articleHrefURL,
@@ -104,7 +106,7 @@ export const actions = {
             articleImageAlt,
             articleImageTitle,
             articleShortDescription,
-            articleHrefURL, articleCategoryId, publish } = retriveArticleData(formData);
+            articleHrefURL, articleCategoryId, publish, articleContents } = retriveArticleData(formData);
 
         if (articleImage && articleImage.size > 0) {
             writeFileSync(`static/articles/${articleImage.name}`, Buffer.from(await articleImage.arrayBuffer()));
@@ -115,6 +117,7 @@ export const actions = {
                 id: event.params.id
             },
             data: {
+                articleContents,
                 articleTitle,
                 articleHrefURL,
                 ...(articleImage && articleImage.size > 0 && {

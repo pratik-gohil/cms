@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import ArticleCard from '$lib/components/ArticleCard/ArticleCard.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
@@ -8,7 +9,7 @@
 
 	export let data;
 
-	let active = 'Grid';
+	let active = 'Table';
 	let search = '';
 </script>
 
@@ -29,6 +30,7 @@
 		type="text"
 		placeholder="Search..."
 		on:change={function (event) {
+			// @ts-ignore
 			search = event.target.value;
 		}}
 	/>
@@ -76,7 +78,7 @@
 			</Table.Header>
 			<Table.Body>
 				{#each data.articles.slice(0, 15) as article}
-					<Table.Row>
+					<Table.Row class="cursor-pointer" on:click={() => goto('/article/' + article.id)}>
 						<Table.Cell>{article.id}</Table.Cell>
 						<Table.Cell>{article.articleTitle}</Table.Cell>
 						<Table.Cell>

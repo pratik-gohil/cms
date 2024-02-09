@@ -7,6 +7,7 @@ export type Article = {
 	id: String;
 	articleIsActive: boolean;
 	articleSortOrder: number;
+	articleContents: string;
 	articleTitle: string;
 	articleCategory: string;
 	articleImageSrc: string;

@@ -13,6 +13,7 @@ datasource db {
 model article {
   id                      String    @id @default(uuid())
   articleIsActive         Boolean
+  articleContents         String    @db.Text()
   articleTitle            String    @db.VarChar(255)
   articleImageSrc         String    @db.VarChar(255)
   articleShortDescription String    @db.VarChar(255)

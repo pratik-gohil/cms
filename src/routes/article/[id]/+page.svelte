@@ -28,6 +28,7 @@
 	let loading = false;
 
 	let editor: HTMLDivElement;
+	let articleContents: HTMLTextAreaElement;
 
 	export let toolbarOptions = [
 		[{ header: 1 }, { header: 2 }, 'blockquote', 'link', 'image', 'video'],
@@ -40,12 +41,18 @@
 	onMount(async () => {
 		const { default: Quill } = await import('quill');
 
-		new Quill(editor, {
+		const quill = new Quill(editor, {
 			modules: {
 				toolbar: toolbarOptions
 			},
 			theme: 'snow',
 			placeholder: 'Write your story...'
+		});
+
+		quill.root.innerHTML = data.article.articleContents;
+
+		quill.on('text-change', function () {
+			articleContents.value = quill.root.innerHTML;
 		});
 	});
 
@@ -203,6 +210,7 @@
 	</div>
 	<div class="mb-20">
 		<div bind:this={editor}></div>
+		<textarea bind:this={articleContents} class="hidden" name="articleContents" />
 	</div>
 </Form.Root>
 
