@@ -15,6 +15,9 @@ export type Article = {
 	articleHrefURL: string;
 	articleImageTitle: string;
 	articleImageAlt: string;
+
+	createdAt: Date,
+	updatedAt: Date,
 };
 
 export type ArticleWithCategory = Article & {

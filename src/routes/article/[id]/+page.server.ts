@@ -10,6 +10,7 @@ import { getFormSchemaWithDefaults, type FormSchema, formSchema } from "./schema
 import { actionResult, superValidate } from "sveltekit-superforms/client";
 import { Prisma } from "@prisma/client";
 import type { RequestEvent } from "./$types";
+import { writeFileSync } from "fs";
 
 export async function load({ params }: LoadEvent): Promise<{ id: String | undefined, categories: ArticleCategory[], article: ArticleWithCategory, form: SuperValidated<FormSchema> }> {
     const categoryResponse = await fetch(BASE_URL + '/api/categories')
@@ -26,7 +27,7 @@ export async function load({ params }: LoadEvent): Promise<{ id: String | undefi
 }
 
 const retriveArticleData = (formData: FormData) => {
-    let data: Prisma.articleCreateInput & { articleCategoryId?: string, __superform_id?: string, publish?: boolean } = {
+    let data: Prisma.articleCreateInput & { articleImage?: File, articleCategoryId?: string, __superform_id?: string, publish?: boolean } = {
         articleTitle: "",
         articleImageSrc: "",
         articleHrefURL: "",
@@ -43,7 +44,8 @@ const retriveArticleData = (formData: FormData) => {
 
     data = {
         ...data,
-        articleHrefURL: slugify(data.articleTitle)
+        articleHrefURL: slugify(data.articleTitle),
+        articleImageSrc: data.articleImage?.name || ""
     }
 
     return data
@@ -98,10 +100,15 @@ export const actions = {
 
         const { articleTitle,
             articleImageSrc,
+            articleImage,
             articleImageAlt,
             articleImageTitle,
             articleShortDescription,
             articleHrefURL, articleCategoryId, publish } = retriveArticleData(formData);
+
+        if (articleImage && articleImage.size > 0) {
+            writeFileSync(`static/articles/${articleImage.name}`, Buffer.from(await articleImage.arrayBuffer()));
+        }
 
         await prisma.article.update({
             where: {
@@ -109,10 +116,12 @@ export const actions = {
             },
             data: {
                 articleTitle,
-                articleImageSrc,
                 articleHrefURL,
-                articleImageAlt,
-                articleImageTitle,
+                ...(articleImage && articleImage.size > 0 && {
+                    articleImageSrc,
+                    articleImageAlt,
+                    articleImageTitle
+                }),
                 articleShortDescription,
                 articleIsActive: publish,
                 articleCategory: {

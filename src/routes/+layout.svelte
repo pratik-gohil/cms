@@ -9,7 +9,7 @@
 
 <div class="flex">
 	<Nav />
-	<main class="w-full bg-background p-5 md:ml-[var(--sidebar-width)]">
+	<main class="w-full bg-background p-5">
 		<slot />
 	</main>
 </div>

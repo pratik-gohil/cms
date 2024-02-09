@@ -10,6 +10,7 @@ export async function GET() {
             articleImageSrc: true,
             articleCategory: true,
             articleIsActive: true,
+            createdAt: true,
         }
     })
 
