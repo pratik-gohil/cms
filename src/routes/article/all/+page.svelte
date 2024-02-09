@@ -29,7 +29,7 @@
 		class="w-[300px]"
 		type="text"
 		placeholder="Search..."
-		on:change={function (event) {
+		on:input={function (event) {
 			// @ts-ignore
 			search = event.target.value;
 		}}
@@ -55,7 +55,9 @@
 
 {#if active === 'Grid'}
 	<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
-		{#each data.articles as article}
+		{#each data.articles.filter((article) => article.articleTitle
+				.toLowerCase()
+				.includes(search.toLowerCase())) as article}
 			<a href={'/article/' + article.id}>
 				<ArticleCard {article} />
 			</a>
@@ -77,7 +79,9 @@
 				</Table.Row>
 			</Table.Header>
 			<Table.Body>
-				{#each data.articles.slice(0, 15) as article}
+				{#each data.articles
+					.filter((article) => article.articleTitle.toLowerCase().includes(search.toLowerCase()))
+					.slice(0, 15) as article}
 					<Table.Row class="cursor-pointer" on:click={() => goto('/article/' + article.id)}>
 						<Table.Cell>{article.id}</Table.Cell>
 						<Table.Cell>{article.articleTitle}</Table.Cell>
