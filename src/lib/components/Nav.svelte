@@ -20,6 +20,14 @@
 
 	<ul>
 		<li>
+			<a href="/faq">FAQ</a>
+		</li>
+	</ul>
+
+	<Separator class="my-5" />
+
+	<ul>
+		<li>
 			<a href="/video">Video</a>
 		</li>
 	</ul>
