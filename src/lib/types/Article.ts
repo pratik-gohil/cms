@@ -1,7 +1,7 @@
 export type ArticleCategory = {
 	id: String;
 	name: String;
-}
+};
 
 export type Article = {
 	id: String;
@@ -16,11 +16,10 @@ export type Article = {
 	articleHrefURL: string;
 	articleImageTitle: string;
 	articleImageAlt: string;
-
-	createdAt: Date,
-	updatedAt: Date,
+	createdAt: Date;
+	updatedAt: Date;
 };
 
 export type ArticleWithCategory = Article & {
-	articleCategory: ArticleCategory
-}
+	articleCategory: ArticleCategory;
+};

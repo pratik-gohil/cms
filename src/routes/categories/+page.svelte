@@ -8,7 +8,6 @@
 	import { Plus, Grid, Table as TableIcon } from 'radix-icons-svelte';
 
 	export let data;
-
     console.log(data)
 	let active = 'Table';
 	let search = '';
@@ -17,7 +16,7 @@
 <div class="mb-4 flex justify-between">
 	<span class="text-xl font-semibold">Categories :</span>
 
-	<a href="/category/add">
+	<a href="/categories/add/new">
 		<Button class="text-sm">
 			<span class="mr-2">Add Category </span>
 			<Plus />
@@ -81,7 +80,8 @@
 				{#each data.categories
 					.filter((cat) => cat.name.toLowerCase().includes(search.toLowerCase()))
 					.slice(0, 15) as cat}
-					<Table.Row class="cursor-pointer" on:click={() => goto('/cat/' + cat.id)}>
+					<Table.Row class="cursor-pointer" 
+                    >
 						<Table.Cell>{cat.id}</Table.Cell>
 						<Table.Cell>{cat.name}</Table.Cell>
 						<Table.Cell>{cat.slug}</Table.Cell>
@@ -99,12 +99,12 @@
 							</span>
 						</Table.Cell>
 						<Table.Cell class='flex'>
-                            <a href={`/category/edit/${cat.id}`}>
+                            <a href={`/categories/edit/${cat.id}`}>
                                 <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10.8 17.8-6.4 2.1 2.1-6.4m4.3 4.3L19 9a3 3 0 0 0-4-4l-8.4 8.6m4.3 4.3-4.3-4.3m2.1 2.1L15 9.1m-2.1-2 4.2 4.2"/>
                                   </svg>
                             </a>
-                            <a href={`/category/delete/${cat.id}`} ><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <a href={`/categories/delete/${cat.id}`} ><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                 <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd"/>
                               </svg>
                               </a>

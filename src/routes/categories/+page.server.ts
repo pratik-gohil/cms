@@ -3,7 +3,7 @@ import type { ArticleCategory } from '$lib/types/Article';
 import type { Category } from '$lib/types/Category';
 
 export async function load(): Promise<{ categories: Category[] }> {
-	const response = await fetch(BASE_URL + '/api/categories');
+	const response = await fetch(BASE_URL + '/api/category');
 	const { categories } = await response.json();
 	return { categories };
 }
