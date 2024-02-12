@@ -185,7 +185,7 @@
 						{#if articleImage || data.article?.articleImageSrc}
 							<img
 								alt="aticleImage"
-								class="max-h-44 w-full flex-1 sm:w-1/2 lg:w-full"
+								class="max-h-44 w-full flex-1 sm:w-1/2 lg:w-full 2xl:w-1/2"
 								src={(articleImage && articleImage.toString()) ||
 									'/articles/' + data.article?.articleImageSrc}
 							/>
@@ -209,7 +209,7 @@
 				</Form.Item>
 			</Form.Field>
 		</div>
-		<div class="flex flex-[.4] flex-col gap-4 bg-secondary p-4">
+		<div class="flex flex-[.6] flex-col gap-4 bg-secondary p-4 xl:flex-[.4]">
 			<h1 class="font-semibold">Information:</h1>
 			<Separator />
 			<p class="text-secondary-foreground">
@@ -221,7 +221,7 @@
 					: '-'}
 			</p>
 
-			<Button type="submit" formaction="?/delete" variant="destructive"
+			<Button type="submit" formaction="?/delete" variant="destructive" class="w-fit px-10"
 				>Delete Article <Trash size={20} /></Button
 			>
 		</div>
