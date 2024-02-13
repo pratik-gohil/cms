@@ -1,16 +1,13 @@
 import prisma from "$lib/prisma";
 
 export async function GET() {
-    const articles = await prisma.article.findMany({
-        select: {
-            id: true,
-            articleTitle: true,
-            articleShortDescription: true,
-            articlePublishDate: true,
-            articleImageSrc: true,
-            articleCategory: true,
-            articleIsActive: true,
-            createdAt: true,
+    const articles = await prisma.article_identifier.findMany({
+        include: {
+            article: {
+                include: {
+                    articleCategory: true,
+                }
+            }
         }
     })
 

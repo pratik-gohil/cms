@@ -24,3 +24,15 @@ export type Article = {
 export type ArticleWithCategory = Article & {
 	articleCategory: ArticleCategory
 }
+
+export type ArticleIdentifier = {
+	id: number,
+	articleId: string;
+	article: Article;
+}
+
+export type ArticleIdentifierWithCategory = {
+	id: number,
+	articleId: string;
+	article: ArticleWithCategory;
+};

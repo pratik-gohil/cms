@@ -8,8 +8,6 @@ export async function POST(event) {
     var data = {};
     formData.forEach((value, key) => data[key] = value);
 
-    // console.log(data)
-
     data = {
         ...data,
         articleIsActive: data.articleIsActive === "true" || false,
@@ -28,14 +26,5 @@ export async function POST(event) {
         data,
     })
 
-    console.log(article)
-
     throw redirect(303, '/article/' + article.id)
-
-    // return new Response(JSON.stringify({ success: true, article }), {
-    //     status: 200,
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // })
 }

@@ -2,12 +2,16 @@ import prisma from "$lib/prisma";
 import type { ServerLoadEvent } from "@sveltejs/kit";
 
 export async function GET({ params }: ServerLoadEvent) {
-    const article = await prisma.article.findUnique({
+    const article = await prisma.article_identifier.findUnique({
         where: {
-            id: params.id,
+            id: Number(params.id),
         },
         include: {
-            articleCategory: true
+            article: {
+                include: {
+                    articleCategory: true
+                }
+            }
         }
     })
 

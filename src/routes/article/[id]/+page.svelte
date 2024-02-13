@@ -10,11 +10,11 @@
 	import { cn } from '$lib/utils';
 
 	export let data;
-	$: ({ form } = data);
+	$: ({ form, article } = data);
 
 	let selected: Selected<any> = {
-		value: data.article?.articleCategory.id as string,
-		label: data.article?.articleCategory.name as string
+		value: data.article?.article.articleCategory.id as string,
+		label: data.article?.article.articleCategory.name as string
 	};
 
 	const options: FormOptions<FormSchema> = {
@@ -31,7 +31,7 @@
 	let loading = false;
 
 	let editor: HTMLDivElement;
-	let articleContents: HTMLTextAreaElement;
+	let articleContentsHTML: string;
 
 	onMount(async () => {
 		const { default: Quill } = await import('quill');
@@ -89,10 +89,10 @@
 			placeholder: 'Write your article...'
 		});
 
-		quill.root.innerHTML = data.article?.articleContents || '';
+		quill.root.innerHTML = article?.article.articleContents || '';
 
 		quill.on('text-change', function () {
-			articleContents.value = quill.root.innerHTML;
+			articleContentsHTML = quill.root.innerHTML;
 		});
 	});
 
@@ -128,10 +128,10 @@
 				disabled={data.id === 'new' || loading}
 				type="submit"
 				name="publish"
-				value={(!data.article?.articleIsActive).toString()}
+				value={(!article?.article.articleIsActive).toString()}
 				class="text-sm"
 			>
-				{#if data.article?.articleIsActive}
+				{#if article?.article.articleIsActive}
 					Un-Publish
 				{:else}
 					Publish
@@ -223,12 +223,12 @@
 										on:change={(e) => onFileSelected(e)}
 									/>
 								</label>
-								{#if articleImage || data.article?.articleImageSrc}
+								{#if articleImage || article?.article.articleImageSrc}
 									<img
 										alt="aticleImage"
 										class="max-h-44 w-full flex-1 sm:w-1/2 lg:w-full 2xl:w-1/2"
 										src={(articleImage && articleImage.toString()) ||
-											'/articles/' + data.article?.articleImageSrc}
+											'/articles/' + article?.article.articleImageSrc}
 									/>
 								{/if}
 							</div>
@@ -328,39 +328,39 @@
 							</span>
 						</div>
 						<div bind:this={editor}></div>
-						<textarea bind:this={articleContents} class="hidden" name="articleContents" />
+						<Form.Textarea value={articleContentsHTML} class="hidden" name="articleContents" />
+						<Form.Validation />
 					</div>
-					<Form.Validation />
 				</Form.Item>
 			</Form.Field>
 		</div>
 		<div class="flex h-fit min-w-[300px] flex-col gap-4">
 			<div
 				class={cn('flex items-center rounded border p-3', {
-					'text-blue-500': !data.article?.articleIsActive,
-					'text-green-500': data.article?.articleIsActive
+					'text-blue-500': !article?.article.articleIsActive,
+					'text-green-500': article?.article.articleIsActive
 				})}
 			>
-				<DotFilled size={20} /> Editing {data.article?.articleIsActive ? 'published' : 'draft'} version
+				<DotFilled size={20} /> Editing {article?.article.articleIsActive ? 'published' : 'draft'} version
 			</div>
 			<div class="flex flex-col gap-4 bg-secondary p-4">
 				<h1 class="font-semibold">Information:</h1>
 				<Separator />
 				<p class="text-secondary-foreground">
-					Create At: {data.article?.createdAt
-						? new Date(data.article.createdAt).toDateString()
+					Create At: {article?.article.createdAt
+						? new Date(article.article.createdAt).toDateString()
 						: '-'}
 				</p>
 				<p class="text-secondary-foreground">By: Admin</p>
 				<p class="text-secondary-foreground">
-					Last Update: {data.article?.updatedAt
-						? new Date(data.article.updatedAt).toDateString()
+					Last Update: {article?.article.updatedAt
+						? new Date(article.article.updatedAt).toDateString()
 						: '-'}
 				</p>
 				<p class="text-secondary-foreground">By: Admin</p>
 				<p class="text-secondary-foreground">
-					Publish At: {data.article?.createdAt
-						? new Date(data.article.createdAt).toDateString()
+					Publish At: {article?.article.createdAt
+						? new Date(article.article.createdAt).toDateString()
 						: '-'}
 				</p>
 			</div>

@@ -3,7 +3,7 @@ import { slugify } from "$lib/utils";
 import { fail, redirect } from "@sveltejs/kit";
 
 import { BASE_URL } from "$env/static/private";
-import type { ArticleCategory, ArticleWithCategory } from "$lib/types/Article"
+import type { ArticleCategory, ArticleIdentifierWithCategory, ArticleWithCategory } from "$lib/types/Article"
 import type { LoadEvent } from "@sveltejs/kit";
 import type { SuperValidated } from "sveltekit-superforms";
 import { getFormSchemaWithDefaults, type FormSchema, formSchema } from "./schema";
@@ -12,7 +12,7 @@ import { Prisma } from "@prisma/client";
 import type { RequestEvent } from "./$types";
 import { writeFileSync } from "fs";
 
-export async function load({ params }: LoadEvent): Promise<{ id: String | undefined, categories: ArticleCategory[], article?: ArticleWithCategory, form: SuperValidated<FormSchema> }> {
+export async function load({ params }: LoadEvent): Promise<{ id: String | undefined, categories: ArticleCategory[], article?: ArticleIdentifierWithCategory, form: SuperValidated<FormSchema> }> {
     const categoryResponse = await fetch(BASE_URL + '/api/categories')
     const { categories } = await categoryResponse.json();
 
@@ -23,7 +23,7 @@ export async function load({ params }: LoadEvent): Promise<{ id: String | undefi
         const articleResponse = await fetch(BASE_URL + "/api/article/" + params.id)
         article = (await articleResponse.json()).article;
 
-        formSchemaWithDefaults = getFormSchemaWithDefaults(article)
+        formSchemaWithDefaults = getFormSchemaWithDefaults(article.article)
     }
 
     form = await superValidate(formSchemaWithDefaults || formSchema)
@@ -132,26 +132,30 @@ export const actions = {
                 writeFileSync(`static/articles/${articleImage.name}`, Buffer.from(await articleImage.arrayBuffer()));
             }
 
-            await prisma.article.update({
+            await prisma.article_identifier.update({
                 where: {
-                    id: event.params.id
+                    id: Number(event.params.id)
                 },
                 data: {
-                    articleContents,
-                    articleTitle,
-                    articleHrefURL,
-                    ...(articleImage && articleImage.size > 0 && {
-                        articleImageSrc,
-                        articleImageAlt,
-                        articleImageTitle
-                    }),
-                    articleShortDescription,
-                    articleIsActive: publish,
-                    articleCategory: {
-                        connect: {
-                            id: articleCategoryId
+                    article: {
+                        update: {
+                            articleContents,
+                            articleTitle,
+                            articleHrefURL,
+                            ...(articleImage && articleImage.size > 0 && {
+                                articleImageSrc,
+                                articleImageAlt,
+                                articleImageTitle
+                            }),
+                            articleShortDescription,
+                            articleIsActive: publish,
+                            articleCategory: {
+                                connect: {
+                                    id: articleCategoryId
+                                }
+                            },
                         }
-                    },
+                    }
                 },
             })
 
