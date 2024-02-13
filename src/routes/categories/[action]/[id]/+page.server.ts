@@ -3,6 +3,8 @@
 // import { fail, redirect } from '@sveltejs/kit';
 
 import { BASE_URL } from '$env/static/private';
+import { categoryFormSchema, getFormSchemaWithDefaults } from '$lib/validations/formSchema.js';
+import { superValidate } from 'sveltekit-superforms/client';
 // import type { ArticleCategory, ArticleWithCategory } from '$lib/types/Article';
 // import type { LoadEvent } from '@sveltejs/kit';
 // import type { SuperValidated } from 'sveltekit-superforms';
@@ -15,21 +17,18 @@ import { BASE_URL } from '$env/static/private';
 // import type { Category } from '$lib/types/Category';
 
 export async function load({ params }) {
-	console.log(params);
 	// const categoryResponse = await fetch(BASE_URL + '/api/category/' + params.id);
 	// const category = await categoryResponse.json();
-
 	let form;
+	let category;
+	let formSchemaWithDefaults;
 	if (params.action !== 'add') {
 		const categoryResponse = await fetch(BASE_URL + '/api/category/' + params.id);
-		let category = await categoryResponse.json();
-		console.log(category);
-		// formSchemaWithDefaults = getFormSchemaWithDefaults(article);
+		category = await categoryResponse.json();
+		formSchemaWithDefaults = getFormSchemaWithDefaults(category.category);
 	}
-
-	// form = await superValidate(categoryFormSchema);
-
-	// return { id: params.id, action: params.action, categories, article, form };
+	form = await superValidate(formSchemaWithDefaults || categoryFormSchema);
+	return { id: params.id, category, form };
 }
 
 // const retriveArticleData = (formData: FormData) => {

@@ -12,9 +12,7 @@ import { Prisma } from '@prisma/client';
 import type { RequestEvent } from './$types';
 import { writeFileSync } from 'fs';
 
-export async function load({
-	params
-}: LoadEvent): Promise<{
+export async function load({ params }: LoadEvent): Promise<{
 	id: String | undefined;
 	categories: ArticleCategory[];
 	article?: ArticleWithCategory;

@@ -59,3 +59,11 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+.ql-toolbar, .ql-container {
+	@apply shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 !border-input
+}
+
+.ql-editor {
+	min-height: 240px;
+}
