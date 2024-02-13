@@ -4,8 +4,8 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
-	import { cn } from '$lib/utils.js';
-	import { Plus, Grid, Table as TableIcon } from 'radix-icons-svelte';
+	import { cn } from '$lib/utils/common.js';
+	import { Grid, Table as TableIcon, Plus } from 'radix-icons-svelte';
 
 	export let data;
 
@@ -102,13 +102,13 @@
 						<Table.Cell>
 							<span
 								class={cn('rounded-md px-4 py-0.5 text-xs font-medium', {
-									'bg-blue-200': !article.articleIsActive,
-									'bg-green-200': article.articleIsActive,
-									'text-blue-800': !article.articleIsActive,
-									'text-green-800': article.articleIsActive
+									'bg-blue-200': !article.isPublished,
+									'bg-green-200': article.isPublished,
+									'text-blue-800': !article.isPublished,
+									'text-green-800': article.isPublished
 								})}
 							>
-								{article.articleIsActive ? 'Published' : 'Draft'}
+								{article.isPublished ? 'Published' : 'Draft'}
 							</span>
 						</Table.Cell>
 					</Table.Row>

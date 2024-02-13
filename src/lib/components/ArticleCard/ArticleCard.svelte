@@ -1,10 +1,9 @@
 <script lang="ts">
-	import type { ArticleWithCategory } from '$lib/types/Article';
+	import type { ArticleWithCategory } from '$lib/types/common';
+	import { cn } from '$lib/utils/common';
+	import Badge from '../ui/badge/badge.svelte';
 
 	export let article: ArticleWithCategory;
-
-	import { Badge } from '$lib/components/ui/badge';
-	import { cn } from '$lib/utils';
 </script>
 
 <div class="relative h-full rounded border p-4">
@@ -24,12 +23,12 @@
 
 	<span
 		class={cn('absolute bottom-full left-0 rounded-t-md px-4 py-0.5 text-xs font-medium', {
-			'bg-blue-200': !article.articleIsActive,
-			'bg-green-200': article.articleIsActive,
-			'text-blue-800': !article.articleIsActive,
-			'text-green-800': article.articleIsActive
+			'bg-blue-200': !article.isPublished,
+			'bg-green-200': article.isPublished,
+			'text-blue-800': !article.isPublished,
+			'text-green-800': article.isPublished
 		})}
 	>
-		{article.articleIsActive ? 'Published' : 'Draft'}
+		{article.isPublished ? 'Published' : 'Draft'}
 	</span>
 </div>

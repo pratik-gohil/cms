@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Separator as SeparatorPrimitive } from 'bits-ui';
-	import { cn } from '$lib/utils';
-
+	import { cn } from '$lib/utils/common';
 	type $$Props = SeparatorPrimitive.Props;
 
 	let className: $$Props['class'] = undefined;

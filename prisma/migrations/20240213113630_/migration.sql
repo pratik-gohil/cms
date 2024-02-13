@@ -1,7 +1,7 @@
 -- CreateTable
 CREATE TABLE "article" (
     "id" TEXT NOT NULL,
-    "articleIsActive" BOOLEAN NOT NULL,
+    "isPublished" BOOLEAN NOT NULL,
     "articleContents" TEXT NOT NULL,
     "articleTitle" VARCHAR(255) NOT NULL,
     "articleImageSrc" VARCHAR(255) NOT NULL,
@@ -15,6 +15,14 @@ CREATE TABLE "article" (
     "articleCategoryId" TEXT,
 
     CONSTRAINT "article_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "article_identifier" (
+    "id" SERIAL NOT NULL,
+    "articleId" TEXT NOT NULL,
+
+    CONSTRAINT "article_identifier_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -32,3 +40,6 @@ CREATE UNIQUE INDEX "category_name_key" ON "category"("name");
 
 -- AddForeignKey
 ALTER TABLE "article" ADD CONSTRAINT "article_articleCategoryId_fkey" FOREIGN KEY ("articleCategoryId") REFERENCES "category"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "article_identifier" ADD CONSTRAINT "article_identifier_articleId_fkey" FOREIGN KEY ("articleId") REFERENCES "article"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

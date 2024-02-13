@@ -12,7 +12,7 @@ datasource db {
 
 model article {
   id                      String    @id @default(uuid())
-  articleIsActive         Boolean
+  isPublished             Boolean
   articleContents         String    @db.Text
   articleTitle            String    @db.VarChar(255)
   articleImageSrc         String    @db.VarChar(255)

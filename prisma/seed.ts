@@ -40,7 +40,7 @@ async function main() {
                     articleHrefURL,
                     articleImageTitle,
                     articleImageAlt,
-                    articleIsActive: true,
+                    isPublished: true,
                     articlePublishDate: new Date(articlePublishDate),
                     articleContents: "",
                     articleCategory: {

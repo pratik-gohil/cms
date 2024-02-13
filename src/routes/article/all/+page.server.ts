@@ -1,5 +1,5 @@
 import { BASE_URL } from "$env/static/private";
-import type { ArticleIdentifierWithCategory } from "$lib/types/Article"
+import type { ArticleIdentifierWithCategory } from "$lib/types/common"
 
 export async function load(): Promise<{
     articles: ArticleIdentifierWithCategory[]
