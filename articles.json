@@ -1,6 +1,6 @@
 [
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 1,
         "articleTitle": "Difference between Dematerialisation and Rematerialisation?",
         "articleCategory": "Demat Account",
@@ -12,7 +12,7 @@
         "articleImageAlt": "Dematerialisation Vs Rematerialisation"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 2,
         "articleTitle": "How to Calculate Brokerage in the Share Market?",
         "articleCategory": "Demat Account",
@@ -24,7 +24,7 @@
         "articleImageAlt": "Brokerage Calculator"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 3,
         "articleTitle": "How to Transfer a Brokerage Account?",
         "articleCategory": "Demat Account",
@@ -36,7 +36,7 @@
         "articleImageAlt": "Transfering Brokerage Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 4,
         "articleTitle": "Five Factors to Consider When Choosing an Equity Broker ",
         "articleCategory": "Demat Account",
@@ -48,7 +48,7 @@
         "articleImageAlt": "Most Important Factors while choosing a Stock Broker"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 5,
         "articleTitle": "What is NAV and How is NAV Calculated",
         "articleCategory": "Mutual Funds",
@@ -60,7 +60,7 @@
         "articleImageAlt": "Net Asset Value in Mutual Funds"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 6,
         "articleTitle": "What Does Zero Brokerage Mean?",
         "articleCategory": "Demat Account",
@@ -72,7 +72,7 @@
         "articleImageAlt": "Learn about Zero Brokerage"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 7,
         "articleTitle": "Advantages of Zero Brokerage Trading",
         "articleCategory": "Demat Account",
@@ -84,7 +84,7 @@
         "articleImageAlt": "Advantages of Zero Brokerage Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 8,
         "articleTitle": "Difference Between Full Service and Discount Brokerage Account",
         "articleCategory": "Demat Account",
@@ -96,7 +96,7 @@
         "articleImageAlt": "Full-service Brokerage vs. Discount Brokerage"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 9,
         "articleTitle": "How to Read Breakaway Bullish and Bearish Candlestick Chart Patterns",
         "articleCategory": "Share Market",
@@ -108,7 +108,7 @@
         "articleImageAlt": "Bullish and Bearish Breakaway Candlestick Pattern"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 10,
         "articleTitle": "What is a Brokerage Account and how to open one?",
         "articleCategory": "Demat Account",
@@ -120,7 +120,7 @@
         "articleImageAlt": "Steps to open Brokerage Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 11,
         "articleTitle": "How to Calculate Brokerage Charges in Intraday Trading",
         "articleCategory": "Intraday Trading",
@@ -132,7 +132,7 @@
         "articleImageAlt": "Steps to Calculate Brokerage Charges in Intraday Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 12,
         "articleTitle": "Is There Any Tax On Intraday Trading",
         "articleCategory": "Intraday Trading",
@@ -144,7 +144,7 @@
         "articleImageAlt": "Income Tax on Intraday Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 13,
         "articleTitle": "How To Open A Free Brokerage Account",
         "articleCategory": "Demat Account",
@@ -156,7 +156,7 @@
         "articleImageAlt": "How to Open Zero Brokerage Demat Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 14,
         "articleTitle": "Is there a Firm in India that Charges Zero Brokerage across Products?",
         "articleCategory": "Demat Account",
@@ -168,7 +168,7 @@
         "articleImageAlt": "Companies offering Zero Brokerage Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 15,
         "articleTitle": "How Does Brokerage Work?",
         "articleCategory": "Share Market",
@@ -180,7 +180,7 @@
         "articleImageAlt": "How does brokerage account work"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 16,
         "articleTitle": "What All Is Free In Zero Brokerage",
         "articleCategory": "Demat Account",
@@ -192,7 +192,7 @@
         "articleImageAlt": "What is Free in Zero Brokerage Demat Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 17,
         "articleTitle": "What is the Difference Between Discount Broking and ZERO broking",
         "articleCategory": "Demat Account",
@@ -204,7 +204,7 @@
         "articleImageAlt": "Difference between Discount Broking and Zero Broking"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 18,
         "articleTitle": "How Do Zero Broking Charges Really Help Me as an Investor",
         "articleCategory": "Demat Account",
@@ -216,7 +216,7 @@
         "articleImageAlt": "How Zero Broking Charges helps an Investor"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 19,
         "articleTitle": "Difference Between FDI And FII",
         "articleCategory": "Share Market",
@@ -228,7 +228,7 @@
         "articleImageAlt": "Difference between FDI and FII"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 20,
         "articleTitle": "How To Choose The Best Demat Account",
         "articleCategory": "Demat Account",
@@ -240,7 +240,7 @@
         "articleImageAlt": "How to select the Best Demat Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 21,
         "articleTitle": "Can You Open More Than One Demat Account in India",
         "articleCategory": "Demat Account",
@@ -252,7 +252,7 @@
         "articleImageAlt": "Can I have Two Demat Accounts in India"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 22,
         "articleTitle": "What are the Features of Demat Account",
         "articleCategory": "Demat Account",
@@ -264,7 +264,7 @@
         "articleImageAlt": "Features & Benefits of Opening a Demat account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 23,
         "articleTitle": "How To Open Demat Account Online",
         "articleCategory": "Demat Account",
@@ -276,7 +276,7 @@
         "articleImageAlt": "Opening a Demat Account Online"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 24,
         "articleTitle": "What is Sensex and How is it Calculated",
         "articleCategory": "Share Market",
@@ -288,7 +288,7 @@
         "articleImageAlt": "What is Sensex and How it is Calculated"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 25,
         "articleTitle": "How to Change Your Name in Demat Account?",
         "articleCategory": "Demat Account",
@@ -300,7 +300,7 @@
         "articleImageAlt": "Procedure to Change Name in Demat Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 26,
         "articleTitle": "Benefits Of Opening Demat Account With m.Stock",
         "articleCategory": "Demat Account",
@@ -312,7 +312,7 @@
         "articleImageAlt": "Benefits of Demat Account Opening with m.Stock"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 27,
         "articleTitle": "Muhurat Trading 2022",
         "articleCategory": "Share Market",
@@ -324,7 +324,7 @@
         "articleImageAlt": "Muhurat Trading Time"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 28,
         "articleTitle": "Introduction to Demat account",
         "articleCategory": "Demat Account",
@@ -336,7 +336,7 @@
         "articleImageAlt": "Types Of Demat Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 29,
         "articleTitle": "Types of Mutual Funds",
         "articleCategory": "Mutual Funds",
@@ -348,7 +348,7 @@
         "articleImageAlt": "How To Choose The Right Mutual Fund"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 30,
         "articleTitle": "Introduction to Intraday Trading",
         "articleCategory": "Intraday Trading",
@@ -360,7 +360,7 @@
         "articleImageAlt": "What Is Intraday Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 31,
         "articleTitle": "How To Transfer Money From Demat Account to Bank Account?",
         "articleCategory": "Demat Account",
@@ -372,7 +372,7 @@
         "articleImageAlt": "How To Transfer Money From Demat Account To Bank"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 32,
         "articleTitle": "Equity vs Commodity",
         "articleCategory": "Share Market",
@@ -384,7 +384,7 @@
         "articleImageAlt": "Difference Between Equity And Commodity"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 33,
         "articleTitle": "Eligibility criteria to open a Demat account",
         "articleCategory": "Demat Account",
@@ -396,7 +396,7 @@
         "articleImageAlt": "Eligibility For Demat Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 34,
         "articleTitle": "What is Large Cap Fund",
         "articleCategory": "Mutual Funds",
@@ -408,7 +408,7 @@
         "articleImageAlt": "What Is Large Cap Fund"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 35,
         "articleTitle": "What is An NCD (Non-convertible Debenture)",
         "articleCategory": "Share Market",
@@ -420,7 +420,7 @@
         "articleImageAlt": "What Is Non Convertible Debenture"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 36,
         "articleTitle": "Difference Between Large Cap and Small Cap Funds",
         "articleCategory": "Mutual Funds",
@@ -432,7 +432,7 @@
         "articleImageAlt": "Difference Between Large Cap And Small Cap Funds"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 37,
         "articleTitle": "IPO Vs NFO",
         "articleCategory": "Initial Public Offering",
@@ -444,7 +444,7 @@
         "articleImageAlt": "What is the Difference Between IPO and NFO"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 38,
         "articleTitle": "How to Apply for IPO using UPI",
         "articleCategory": "Initial Public Offering",
@@ -456,7 +456,7 @@
         "articleImageAlt": "How to Apply for IPO Using UPI"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 39,
         "articleTitle": "Types of Ipo",
         "articleCategory": "Initial Public Offering",
@@ -468,7 +468,7 @@
         "articleImageAlt": "Types of Investors in IPO"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 40,
         "articleTitle": "Documents required for opening a Demat account",
         "articleCategory": "Demat Account",
@@ -480,7 +480,7 @@
         "articleImageAlt": "List of documents to Open a Demat Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 41,
         "articleTitle": "How can I trade with zero brokerage?",
         "articleCategory": "Demat Account",
@@ -492,7 +492,7 @@
         "articleImageAlt": "Zero Intraday Brokerage"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 42,
         "articleTitle": "What is zero brokerage on equity delivery?",
         "articleCategory": "Demat Account",
@@ -504,7 +504,7 @@
         "articleImageAlt": "What is Zero Brokerage on Equity Delivery"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 43,
         "articleTitle": "How to app for an IPO online",
         "articleCategory": "Initial Public Offering",
@@ -516,7 +516,7 @@
         "articleImageAlt": "IPO Application – Apply for IPO"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 44,
         "articleTitle": "GTT orders on m.Stock",
         "articleCategory": "Share Market",
@@ -528,7 +528,7 @@
         "articleImageAlt": "GTT order on m.Stock"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 45,
         "articleTitle": "KYC for Demat Account - Importance and Documentation",
         "articleCategory": "Demat Account",
@@ -540,7 +540,7 @@
         "articleImageAlt": "KYC for Demat Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 46,
         "articleTitle": "Basket Orders",
         "articleCategory": "Share Market",
@@ -552,7 +552,7 @@
         "articleImageAlt": "Basket Order Trading in the Share Market"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 47,
         "articleTitle": "Pros and Cons of Opening Multiple Demat Accounts",
         "articleCategory": "Demat Account",
@@ -564,7 +564,7 @@
         "articleImageAlt": "Multiple Demat Accounts"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 48,
         "articleTitle": "Features & Benefits of MTF (eMargin)",
         "articleCategory": "Margin Trading Facility",
@@ -576,7 +576,7 @@
         "articleImageAlt": "MTF trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 49,
         "articleTitle": "Do You Need a Demat Account for Mutual Funds?",
         "articleCategory": "Demat Account",
@@ -588,7 +588,7 @@
         "articleImageAlt": "Demat Account required for Mutual Funds"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 50,
         "articleTitle": "What is Equity Funding & its’ Benefits",
         "articleCategory": "Share Market",
@@ -600,7 +600,7 @@
         "articleImageAlt": "Benefits of Equity Funding"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 51,
         "articleTitle": "How Does an SIP Work",
         "articleCategory": "Mutual Funds",
@@ -612,7 +612,7 @@
         "articleImageAlt": "How SIP Works with Example"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 52,
         "articleTitle": "What is SIP & it’s benefits",
         "articleCategory": "Mutual Funds",
@@ -624,7 +624,7 @@
         "articleImageAlt": "What is SIP"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 53,
         "articleTitle": "What is a trading account and its benefits?",
         "articleCategory": "Trading Account",
@@ -636,7 +636,7 @@
         "articleImageAlt": "Open Trading Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 54,
         "articleTitle": "Learn how MTF benefits your trades",
         "articleCategory": "Margin Trading Facility",
@@ -648,7 +648,7 @@
         "articleImageAlt": "Benefits of MTF (eMargin)"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 55,
         "articleTitle": "What are mstocks mtf charges",
         "articleCategory": "Margin Trading Facility",
@@ -660,7 +660,7 @@
         "articleImageAlt": "Margin Trading Charges"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 56,
         "articleTitle": "A Guide on How to Transfer Shares from One Demat Account to Another",
         "articleCategory": "Demat Account",
@@ -672,7 +672,7 @@
         "articleImageAlt": "Transfer Shares from One Demat account to another"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 57,
         "articleTitle": "5 things to check while opening a Demat account",
         "articleCategory": "Demat Account",
@@ -684,7 +684,7 @@
         "articleImageAlt": "Demat Account Procedure"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 58,
         "articleTitle": "Demat Account Charges",
         "articleCategory": "Demat Account",
@@ -696,7 +696,7 @@
         "articleImageAlt": "Demat Account Opening Charges"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 59,
         "articleTitle": "Advantages & benefits of online share trading?",
         "articleCategory": "Share Market",
@@ -708,7 +708,7 @@
         "articleImageAlt": "What are the Advantages of Online Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 60,
         "articleTitle": "All about Demat account maintenance charges.",
         "articleCategory": "Demat Account",
@@ -720,7 +720,7 @@
         "articleImageAlt": "What is Demat AMC Charges"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 61,
         "articleTitle": "How to activate a segment in m.Stock",
         "articleCategory": "Share Market",
@@ -732,7 +732,7 @@
         "articleImageAlt": "Types of Market Segments"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 62,
         "articleTitle": "What is MTF Pledge - Meaning and Process of Pledging",
         "articleCategory": "Margin Trading Facility",
@@ -744,7 +744,7 @@
         "articleImageAlt": "What is MTF Pledge"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 63,
         "articleTitle": "NSDL V/s CDSL - A guide to Indian Depositories",
         "articleCategory": "Demat Account",
@@ -756,7 +756,7 @@
         "articleImageAlt": "CDSL vs NSDL"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 64,
         "articleTitle": "What is a Demat account and how to use it?",
         "articleCategory": "Demat Account",
@@ -768,7 +768,7 @@
         "articleImageAlt": "Demat account online"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 65,
         "articleTitle": "How to trade online using a Trading account?",
         "articleCategory": "Trading Account",
@@ -780,7 +780,7 @@
         "articleImageAlt": "Trade using Trading Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 66,
         "articleTitle": "7 factors to consider while opening Trading account online",
         "articleCategory": "Trading Account",
@@ -792,7 +792,7 @@
         "articleImageAlt": "Trading Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 67,
         "articleTitle": "How to Invest in the Share Market? Tips for Beginners",
         "articleCategory": "Share Market",
@@ -804,7 +804,7 @@
         "articleImageAlt": "How to Buy Stocks for Beginners"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 68,
         "articleTitle": "Online Trading and its advantages",
         "articleCategory": "Share Market",
@@ -816,7 +816,7 @@
         "articleImageAlt": "Online Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 69,
         "articleTitle": "What is a rights issue of shares?",
         "articleCategory": "Share Market",
@@ -828,7 +828,7 @@
         "articleImageAlt": "Right issue of shares"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 70,
         "articleTitle": "What is a margin trade",
         "articleCategory": "Margin Trading Facility",
@@ -840,7 +840,7 @@
         "articleImageAlt": "Margin Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 71,
         "articleTitle": "What is ‘Margin Call’ in the stock market?",
         "articleCategory": "Margin Trading Facility",
@@ -852,7 +852,7 @@
         "articleImageAlt": "Margin Call Trade"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 72,
         "articleTitle": "What is Delivery Margin Trading",
         "articleCategory": "Margin Trading Facility",
@@ -864,7 +864,7 @@
         "articleImageAlt": "Delivery Margin"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 73,
         "articleTitle": "10 Myths about Mutual Funds",
         "articleCategory": "Mutual Funds",
@@ -876,7 +876,7 @@
         "articleImageAlt": "Myths on Mutual Funds"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 74,
         "articleTitle": "What is an ETF?",
         "articleCategory": "Mutual Funds",
@@ -888,7 +888,7 @@
         "articleImageAlt": "What is etf"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 75,
         "articleTitle": "IPO Vs FPO",
         "articleCategory": "Initial Public Offering",
@@ -900,7 +900,7 @@
         "articleImageAlt": "IPO and FPO Difference"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 76,
         "articleTitle": "Margin of Safety: All you need to know",
         "articleCategory": "Margin Trading Facility",
@@ -912,7 +912,7 @@
         "articleImageAlt": "Margin of Safety Meaning"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 77,
         "articleTitle": "Types of Demat and Trading accounts",
         "articleCategory": "Demat Account",
@@ -924,7 +924,7 @@
         "articleImageAlt": "Types of Demat Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 78,
         "articleTitle": "Low brokerage and low-cost discount brokerage in India",
         "articleCategory": "Demat Account",
@@ -936,7 +936,7 @@
         "articleImageAlt": "India Top Discount Brokers"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 79,
         "articleTitle": "How to find Demat account number?",
         "articleCategory": "Demat Account",
@@ -948,7 +948,7 @@
         "articleImageAlt": "How to find my Demat account number"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 80,
         "articleTitle": "Know all about Peak Margin: Its Rules, Penalty and Importance",
         "articleCategory": "Margin Trading Facility",
@@ -960,7 +960,7 @@
         "articleImageAlt": "Peak Margin Rules"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 81,
         "articleTitle": "What are Large Cap stocks?",
         "articleCategory": "Mutual Funds",
@@ -972,7 +972,7 @@
         "articleImageAlt": "Large Cap Stocks"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 82,
         "articleTitle": "Face Value of a share: Explained",
         "articleCategory": "Share Market",
@@ -984,7 +984,7 @@
         "articleImageAlt": "What is Face Value of a Share"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 83,
         "articleTitle": "Decoding Daily Margin Statement",
         "articleCategory": "Share Market",
@@ -996,7 +996,7 @@
         "articleImageAlt": "What is Daily Margin Statement"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 84,
         "articleTitle": "A Guide to the Share Market: For Beginners",
         "articleCategory": "Share Market",
@@ -1008,7 +1008,7 @@
         "articleImageAlt": "Basic Knowledge of Indian Stock Market"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 85,
         "articleTitle": "Differences Between Shares and Debentures",
         "articleCategory": "Share Market",
@@ -1020,7 +1020,7 @@
         "articleImageAlt": "Shares vs Debentures"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 86,
         "articleTitle": "Equity vs. Debt: What's the Difference?",
         "articleCategory": "Mutual Funds",
@@ -1032,7 +1032,7 @@
         "articleImageAlt": "Equity vs Debt Funds"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 87,
         "articleTitle": "Everything You Need to Know About Equities",
         "articleCategory": "Mutual Funds",
@@ -1044,7 +1044,7 @@
         "articleImageAlt": "What is Shareholders Equity"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 88,
         "articleTitle": "Fundamental Analysis of Stocks: Explained",
         "articleCategory": "Share Market",
@@ -1056,7 +1056,7 @@
         "articleImageAlt": "Fundamental Analysis of a Company in Stock Market"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 89,
         "articleTitle": "How to Add Nominee in Demat Account",
         "articleCategory": "Demat Account",
@@ -1068,7 +1068,7 @@
         "articleImageAlt": "Add a Nominee in Your Demat Account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 90,
         "articleTitle": "How to Bid for an IPO – Tips and Tricks",
         "articleCategory": "Initial Public Offering",
@@ -1080,7 +1080,7 @@
         "articleImageAlt": "How Does IPO Bidding Works"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 91,
         "articleTitle": "Know the Different Types of Fundamental Analysis Techniques",
         "articleCategory": "Share Market",
@@ -1092,7 +1092,7 @@
         "articleImageAlt": "Difference between Quantitative & Qualitative Analysis"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 92,
         "articleTitle": "Moving Averages in Stocks",
         "articleCategory": "Share Market",
@@ -1104,7 +1104,7 @@
         "articleImageAlt": "What is Moving Averages"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 93,
         "articleTitle": "What are Preference Shares?",
         "articleCategory": "Share Market",
@@ -1116,7 +1116,7 @@
         "articleImageAlt": "Preference Share Meaning"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 94,
         "articleTitle": "What is Primary Market?",
         "articleCategory": "Share Market",
@@ -1128,7 +1128,7 @@
         "articleImageAlt": "What is New Issue Market"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 95,
         "articleTitle": "What is an SME IPO?",
         "articleCategory": "Initial Public Offering",
@@ -1140,7 +1140,7 @@
         "articleImageAlt": "IPO SME"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 96,
         "articleTitle": "Why Do Companies Go Public?",
         "articleCategory": "Initial Public Offering",
@@ -1152,7 +1152,7 @@
         "articleImageAlt": "Why Would a Company Go Public"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 97,
         "articleTitle": "Everything about IPO Grey Market",
         "articleCategory": "Initial Public Offering",
@@ -1164,7 +1164,7 @@
         "articleImageAlt": "IPO Grey Market"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 98,
         "articleTitle": "How to choose the best Demat service provider?",
         "articleCategory": "Demat Account",
@@ -1176,7 +1176,7 @@
         "articleImageAlt": "Top Demat Account Providers"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 99,
         "articleTitle": "Is intraday trading possible without a Demat account?",
         "articleCategory": "Demat Account",
@@ -1188,7 +1188,7 @@
         "articleImageAlt": "intraday trading without demat account"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 100,
         "articleTitle": "Technical Analysis of Stocks",
         "articleCategory": "Share Market",
@@ -1200,7 +1200,7 @@
         "articleImageAlt": "Technical Analysis Charts"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 101,
         "articleTitle": "IPO Exit Strategy – What is it and How Does it Work?",
         "articleCategory": "Initial Public Offering",
@@ -1212,7 +1212,7 @@
         "articleImageAlt": "Initial Public Exit Route"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 102,
         "articleTitle": "Top 10 IPO Investment Tips and Strategies",
         "articleCategory": "Initial Public Offering",
@@ -1224,7 +1224,7 @@
         "articleImageAlt": "IPO Investment Tips"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 103,
         "articleTitle": "What are Penny Stocks?",
         "articleCategory": "Share Market",
@@ -1236,7 +1236,7 @@
         "articleImageAlt": "Top Penny Stocks"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 104,
         "articleTitle": "What is A Bonus Share?",
         "articleCategory": "Share Market",
@@ -1248,7 +1248,7 @@
         "articleImageAlt": "What Is Bonus Share"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 105,
         "articleTitle": "What is Oversubscription in an IPO?",
         "articleCategory": "Initial Public Offering",
@@ -1260,7 +1260,7 @@
         "articleImageAlt": "Oversubscribed IPO Meaning"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 106,
         "articleTitle": "What is Cut-Off Price in an IPO?",
         "articleCategory": "Initial Public Offering",
@@ -1272,7 +1272,7 @@
         "articleImageAlt": "IPO Cut-Off Price"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 107,
         "articleTitle": "Basics of Income Tax for Beginners",
         "articleCategory": "Share Market",
@@ -1284,7 +1284,7 @@
         "articleImageAlt": "Difference Between Demat and Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 108,
         "articleTitle": "What is Face Value in an IPO?",
         "articleCategory": "Initial Public Offering",
@@ -1296,7 +1296,7 @@
         "articleImageAlt": "Face Value in an IPO"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 109,
         "articleTitle": "Difference between Demat and Trading Account",
         "articleCategory": "Trading Account",
@@ -1308,7 +1308,7 @@
         "articleImageAlt": "Difference Between Demat and Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 110,
         "articleTitle": "Your Guide to Identifying Multibagger Stocks",
         "articleCategory": "Share Market",
@@ -1320,7 +1320,7 @@
         "articleImageAlt": "Multibagger Stocks"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 111,
         "articleTitle": "New Margin Rule on Selling Stocks",
         "articleCategory": "Margin Trading Facility",
@@ -1332,7 +1332,7 @@
         "articleImageAlt": "Margin Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 112,
         "articleTitle": "What is the IPO Process in India?",
         "articleCategory": "Initial Public Offering",
@@ -1344,7 +1344,7 @@
         "articleImageAlt": "IPO Process steps"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 113,
         "articleTitle": "How to Buy Unlisted Shares of Pre IPO Companies?",
         "articleCategory": "Initial Public Offering",
@@ -1356,7 +1356,7 @@
         "articleImageAlt": "Best Unlisted IPO to buy"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 114,
         "articleTitle": "Is Demat Account Mandatory for Investing in Derivatives?",
         "articleCategory": "Demat Account",
@@ -1368,7 +1368,7 @@
         "articleImageAlt": "Demat Account Opening for Derivatives"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 115,
         "articleTitle": "Importance of Trading Account and Why Do You Need it",
         "articleCategory": "Trading Account",
@@ -1380,7 +1380,7 @@
         "articleImageAlt": "Do You Need a Trading Account "
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 116,
         "articleTitle": "Process for Converting your Demat Account into a BSDA Account",
         "articleCategory": "Demat Account",
@@ -1392,7 +1392,7 @@
         "articleImageAlt": "BSDA Account Charges"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 117,
         "articleTitle": "NRI Trading Account: Online Trading Account for NRI",
         "articleCategory": "Trading Account",
@@ -1404,7 +1404,7 @@
         "articleImageAlt": "Online Trading Account for NRI"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 118,
         "articleTitle": "Know the Income Tax on Demat Account & Transactions",
         "articleCategory": "Demat Account",
@@ -1416,7 +1416,7 @@
         "articleImageAlt": "Demat Account Income Tax"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 119,
         "articleTitle": "How to protect yourself from Demat account Fraud",
         "articleCategory": "Demat Account",
@@ -1428,7 +1428,7 @@
         "articleImageAlt": "Demat Scam"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 121,
         "articleTitle": "Advantages of Investing in Mutual Fund",
         "articleCategory": "Mutual Funds",
@@ -1440,7 +1440,7 @@
         "articleImageAlt": "Types of Money Market Funds"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 122,
         "articleTitle": "Does m.Stock offer MTF for an Unlimited Number of Days?",
         "articleCategory": "Margin Trading Facility",
@@ -1452,7 +1452,7 @@
         "articleImageAlt": "What is eMargin Trading"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 123,
         "articleTitle": "How to Convert Physical Shares into Demat",
         "articleCategory": "Demat Account",
@@ -1464,7 +1464,7 @@
         "articleImageAlt": "How to Convert Old Share Certificates into Demat."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 124,
         "articleTitle": "A step-by-step guide to link Aadhaar with demat account",
         "articleCategory": "Demat Account",
@@ -1476,7 +1476,7 @@
         "articleImageAlt": "Aadhaar Link with Demat Account."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 125,
         "articlePublishDate": "2023-06-12",
         "articleHrefURL": "mtf-meaning-and-steps",
@@ -1488,7 +1488,7 @@
         "articleShortDescription": "Margin trading is a popular feature offered by financial institutions that allows investors to trade securities using borrowed funds. It enables traders to increase their purchasing power and potentially amplify their returns. In India, the Securities and Exchange Board of India (SEBI) regulates margin trading facilities provided by brokers and exchanges. This article will delve into the meaning of margin trading, its requirements, regulations, benefits, risks, and popular strategies used by traders in India."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 126,
         "articlePublishDate": "2023-06-12",
         "articleHrefURL": "sip-vs-lumpsum-investment",
@@ -1500,7 +1500,7 @@
         "articleShortDescription": "As a part of your investment journey, you have to make a number of choices and decisions to optimise your returns. One such crucial choice is between SIPs and lumpsum investments. The SIP vs Lumpsum investment dilemma may be an old one, but it continues to concern new investors even today."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 127,
         "articlePublishDate": "2023-06-12",
         "articleHrefURL": "demat-account-opening-process",
@@ -1512,7 +1512,7 @@
         "articleShortDescription": "In today's digital age, the demat account opening process has become a convenient and efficient way for investors to hold their securities in electronic form. A demat account eliminates the need for physical share certificates and offers a seamless trading experience. This blog will guide you through the step-by-step process of opening a demat account online, ensuring a hassle-free and secure experience."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 128,
         "articlePublishDate": "2023-06-12",
         "articleHrefURL": "difference-between-fundamental-and-technical-analysis",
@@ -1524,7 +1524,7 @@
         "articleShortDescription": "A thorough analysis of stocks before investing in them is crucial for achieving financial success. Without proper analysis, you may end up making decisions based on incomplete or inaccurate information, which can lead to losses and missed opportunities. There’s also the inadvertent risk of personal biases and emotions creeping into your decision-making."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 129,
         "articlePublishDate": "2023-06-12",
         "articleHrefURL": "types-of-trading-on-equity",
@@ -1536,7 +1536,7 @@
         "articleShortDescription": "The practice of buying and selling shares or stocks of publicly traded companies is known as equity trading. It is a popular form of investment that allows individuals and institutional investors to participate in the financial markets and potentially generate profits. Trading in equity involves various strategies and approaches, each suited to different investment goals and time horizons. In this article, we will explore the five major types of trading in equity: scalping, day trading, swing trading, position trading, and long-term trading."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 130,
         "articlePublishDate": "2023-06-12",
         "articleHrefURL": "primary-listing-benetfits",
@@ -1548,7 +1548,7 @@
         "articleShortDescription": "Once a company raises funds through an Initial Public Offering, it lists its shares on a stock exchange. This facilitates easy and seamless trading of shares between investors. Market experts often use the term ‘primary listing’ to refer to companies that list shares on an exchange for the first time. As an investor, you need to know what this term means and how primary listing works in the real world. Here’s a detailed overview."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 131,
         "articlePublishDate": "2023-06-12",
         "articleHrefURL": "who-is-syndicate-member",
@@ -1560,7 +1560,7 @@
         "articleShortDescription": "A company desirous of raising funds through the sale of its shares to the public for the first time goes through a long-drawn process known as the Initial Public Offering (IPO). If you’re interested in investing in IPOs of companies, you need to know the different parties associated with them."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 132,
         "articlePublishDate": "2023-06-12",
         "articleHrefURL": "money-market-mutual-fund-guide",
@@ -1572,7 +1572,7 @@
         "articleShortDescription": "Money market mutual funds are among the many types of investment options available in India. These funds are ideal for investors looking for low-risk investment options. However, even if you’re a risk-aggressive investor, you may still choose to add money market mutual funds to your portfolio for diversification. That said, here’s everything you need to know about this unique investment option."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 133,
         "articlePublishDate": "2023-06-18",
         "articleHrefURL": "advantages-of-leverage-trading-in-stock-market",
@@ -1584,7 +1584,7 @@
         "articleShortDescription": "Leverage is an important concept in the stock market, that every trader should be aware of. It is a powerful tool that can help multiply your investment potential and returns.<br /><br /> But what is leverage and why do traders choose to use it? Here’s everything you need to know about the concept of leverage and its various advantages."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 134,
         "articlePublishDate": "2023-06-18",
         "articleHrefURL": "difference-between-margin-trading-and-leverage-trading",
@@ -1596,7 +1596,7 @@
         "articleShortDescription": "Contrary to popular opinion, you don’t require huge investment capital to trade in the Indian stock market. Margin trading and leverage trading are two facilities that you can use to initiate positions in stocks and other securities, even if you don’t possess the necessary investment capital. Wish to know more about these two facilities and the difference between margin and leverage trading? Here’s an in-depth guide that can help you understand these two concepts."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 135,
         "articlePublishDate": "2023-06-23",
         "articleHrefURL": "benefits-of-tax-saving-mutual-funds",
@@ -1608,7 +1608,7 @@
         "articleShortDescription": "Investing in mutual funds not only provides the opportunity for wealth creation and portfolio diversification but can also offer significant tax benefits. There are various tax-saving mutual fund schemes in India designed specifically to help individuals reduce their tax liability while simultaneously growing their investments. In this article, we will explore the 7 key benefits of mutual funds in India, with a special focus on the tax advantages they provide."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 136,
         "articlePublishDate": "2023-06-23",
         "articleHrefURL": "how-to-buy-and-sell-bonds",
@@ -1620,7 +1620,7 @@
         "articleShortDescription": "Bonds are one of the many investment options available in India. They’re relatively safer than equity and offer a stable source of income, making them an ideal option for risk-averse and conservative investors. From government securities to corporate bonds, there are many different types, each with its own set of advantages and disadvantages."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 137,
         "articlePublishDate": "2023-06-23",
         "articleHrefURL": "what-is-margin-pledge",
@@ -1632,7 +1632,7 @@
         "articleShortDescription": "To invest in the stock market, you need adequate capital. But what if the funds you have in your trading account are inadequate to purchase the stock of your preferred company? Here’s where Margin Trading Facility (MTF) comes into the picture. It is a unique feature that many stockbrokers offer. It allows you to purchase stocks even when your trading account has insufficient funds."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 138,
         "articlePublishDate": "2023-06-23",
         "articleHrefURL": "non-repatriable-demat-account",
@@ -1644,7 +1644,7 @@
         "articleShortDescription": "In India, there are three different demat account types - non-repatriable demat accounts, repatriable demat accounts and regular demat accounts. Both the non-repatriable and repatriable accounts are exclusively for Non-Resident Indians (NRIs), whereas regular demat accounts are for Resident Indians."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 139,
         "articlePublishDate": "2023-06-23",
         "articleHrefURL": "what-is-tpin-number",
@@ -1656,7 +1656,7 @@
         "articleShortDescription": "The Central Depository Services Limited (CDSL), one of the two active depositories in the country, introduced a dedicated security mechanism - the TPIN system - for all of its demat accounts. If you’re an investor who has a demat account with CDSL, you need to know what TPIN is, its importance and how to generate one for yourself."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 140,
         "articlePublishDate": "2023-09-09",
         "articleHrefURL": "difference-between-nre-and-nro-account",
@@ -1668,7 +1668,7 @@
         "articleShortDescription": "Non-Resident Indians (NRIs) cannot open a regular Savings bank account in India. However, they can open either a Non-Resident External (NRE) account or a Non-Resident Ordinary (NRO) account. If you’re already an NRI or are slated to fall into this category shortly, you need to know the difference between NRE and NRO accounts. This will help you make the right financial decision."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 141,
         "articlePublishDate": "2023-09-09",
         "articleHrefURL": "dp-charges-in-india",
@@ -1680,7 +1680,7 @@
         "articleShortDescription": "A demat account is a mandatory prerequisite for trading in the Indian stock market. You cannot buy or sell shares through the primary or secondary market without a demat account. However, when you open a demat account, you are obligated to pay certain one-time and recurring fees known as DP charges. Wondering what they are? Here’s a comprehensive guide on what DP charges mean, their different components and who levies these charges."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 142,
         "articlePublishDate": "2023-09-09",
         "articleHrefURL": "what-is-stock-margin",
@@ -1692,7 +1692,7 @@
         "articleShortDescription": " One of the many advantages of Indian stock market is that you can invest in companies even with limited funds. With stock margin, you can purchase a wide range of securities even when you don’t have the required funds to complete the transaction."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 143,
         "articlePublishDate": "2023-09-09",
         "articleHrefURL": "what-is-stock-holding-period",
@@ -1704,7 +1704,7 @@
         "articleShortDescription": "A holding period refers to the duration for which you hold the securities in your demat account. It starts from the date you purchase securities until you sell them. So, for instance, if you bought shares of any company on 10th December 2019 and sold them on 10th December 2022, your holding period will be 3 years. But why must you calculate the holding period? The two main objectives of calculating holding period are:"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 144,
         "articlePublishDate": "2023-09-09",
         "articleHrefURL": "what-is-settlement-period-for-stocks",
@@ -1716,7 +1716,7 @@
         "articleShortDescription": "The concept of settlement is a fundamental aspect of stock market investments, yet many people don’t understand how it works."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 145,
         "articlePublishDate": "2023-09-22",
         "articleHrefURL": "procedure-for-issue-of-duplicate-share-certificate",
@@ -1728,7 +1728,7 @@
         "articleShortDescription": "If you’re anxious and stressed out about a misplaced or lost share certificate, then don’t be. We will tell you how to get a duplicate share certificate issued. Read on to know the steps to apply for a duplicate share certificate and the best practices to be observed."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 146,
         "articlePublishDate": "2023-09-22",
         "articleHrefURL": "what-is-dow-theory",
@@ -1740,7 +1740,7 @@
         "articleShortDescription": "Investors and traders are always looking for ways to beat market’s average returns, maximise their profits, and minimise their risks. As such, there are several theories in existence as an attempt to explain or understand the behaviour and performance of the stock market. These theories have been proposed over time by economists, academics, and investors to explain how the stock market works and how it affects the broader economy. One such prominent hypothesis is the Dow Theory, which has withstood the test of time and market volatility for well over a century. Let’s familiarise you with it, how it works, and how it can benefit you in your trading journey."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 147,
         "articlePublishDate": "2023-09-22",
         "articleHrefURL": "what-is-support-and-resistance",
@@ -1752,7 +1752,7 @@
         "articleShortDescription": "As you go deeper in your understanding of the technical analysis of stocks, you will often come across the terms – ‘Support’ and ‘Resistance’. Support and resistance are two important concepts that can help you make informed stock trading decisions. Support refers to a price level below which a stock is unlikely to fall, while resistance refers to a price level above which a stock is unlikely to rise. These levels are determined by market forces such as supply and demand and can be influenced by a variety of factors, including market sentiment, news events, and economic indicators."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 148,
         "articlePublishDate": "2023-09-22",
         "articleHrefURL": "important-thumb-rules-for-investing-in-equity-funds",
@@ -1764,7 +1764,7 @@
         "articleShortDescription": "If you are a beginner to investing, you may not be sure about how to get started. There may be various questions holding you back, like how much you should invest, how to invest more, and how to save up for emergencies. Fortunately, there are various thumb rules that can make investing easier for you. Let’s take a closer look at some such useful rules that can guide you along your investment journey."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 149,
         "articlePublishDate": "2023-09-22",
         "articleHrefURL": "what-is-debt-funds",
@@ -1776,7 +1776,7 @@
         "articleShortDescription": "If you’re looking for a market-linked investment option that’s not as risky as equity but has the potential to deliver moderate returns, debt instruments may just be the one for you. One of the best ways to invest in these instruments is through debt mutual funds. They’re easy to invest in, offer much stabler returns and reduce your portfolio risk through diversification."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 150,
         "articlePublishDate": "2023-09-22",
         "articleHrefURL": "what-is-pre-open-market-trading",
@@ -1788,7 +1788,7 @@
         "articleShortDescription": "The Indian stock market opens up for trading at 9.15 AM and goes on until 3.30 PM. These are the regular trading hours during which investors and traders may place their buy and sell orders."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 151,
         "articlePublishDate": "2023-09-22",
         "articleHrefURL": "what-are-hybrid-funds-and-its-types",
@@ -1800,7 +1800,7 @@
         "articleShortDescription": "Hybrid mutual funds, also referred to as balanced funds, are investment tools that provide a combination of asset classes, often blending equity (stocks) and debt (bonds). These funds aim to strike a balance between generating capital appreciation through equity investments and providing stability through fixed income securities. In this blog post, we will explore the concept of hybrid funds, how they work, the types of hybrid funds available, and considerations for potential investors."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 152,
         "articlePublishDate": "2023-09-22",
         "articleHrefURL": "different-types-of-debt-mutual-funds",
@@ -1812,7 +1812,7 @@
         "articleShortDescription": "Debt funds are a popular investment choice among individuals seeking stability and income generation. These funds primarily invest in fixed income securities such as government bonds, corporate bonds, and money market instruments. There are various types of debt funds available to invest in, each with its own characteristics and risk profiles. Let us take a look at the different types of debt mutual funds, highlighting their key features and benefits."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 153,
         "articlePublishDate": "2023-09-22",
         "articleHrefURL": "different-types-of-equity-mutual-funds",
@@ -1824,7 +1824,7 @@
         "articleShortDescription": "If you’re seeking long-term capital appreciation and potential growth, then equity funds are probably the right investment option for you. These funds mainly invest in stocks or equities of companies across various sectors and market capitalisations. There is a large array of various types of equity funds that can fit different kinds of investment objectives and risk tolerance levels. In this blog, we will explore the different types of equity funds available in mutual funds, highlighting their characteristics and benefits. So, let’s get right to it."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 154,
         "articlePublishDate": "2023-09-22",
         "articleHrefURL": "what-is-trading-on-equity",
@@ -1836,7 +1836,7 @@
         "articleShortDescription": "There are many ways in which companies can increase the gains and benefits enjoyed by their shareholders. Trading on equity is one such strategy. Also known as financial leverage, it is essentially the process of taking on some debt and using the funds thus obtained to procure new assets that generate high levels of income. Let’s take a closer look at how trading on equity works. "
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 155,
         "articlePublishDate": "2023-09-25",
         "articleHrefURL": "how-to-open-joint-demat-account",
@@ -1848,7 +1848,7 @@
         "articleShortDescription": "In today's digital world, investing in the Indian stock market has become more accessible and convenient than ever before. As a result, many individuals are exploring joint investments with their spouses, family members, or business partners. To facilitate such ventures, financial institutions offer the option of a joint Demat account."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 156,
         "articlePublishDate": "2023-09-25",
         "articleHrefURL": "demat-request-form",
@@ -1860,7 +1860,7 @@
         "articleShortDescription": "As an investor, you must have come across the term \"Demat Request Form\" or DRF at some point in your investment journey. In the modern financial world, investing in securities such as stocks, bonds, and mutual funds has become more accessible and convenient through the Demat (Dematerialisation) account. The Demat account allows you to hold your securities in electronic form, eliminating the need for physical certificates."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 157,
         "articlePublishDate": "2023-09-25",
         "articleHrefURL": "margin-trading-interest-rate-charged",
@@ -1872,7 +1872,7 @@
         "articleShortDescription": "If you are an active investor or trader in India, you may have come across the concept of margin trading. This financial tool allows you to leverage your capital and borrow funds from your broker to increase your purchasing power and potentially magnify your returns. However, before engaging in margin trading, it is crucial to grasp the concept of the Margin Trading Interest Rate, commonly known as MTF interest rate or interest on margin trading."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 158,
         "articlePublishDate": "2023-09-25",
         "articleHrefURL": "lifetime-free-demat-account",
@@ -1884,7 +1884,7 @@
         "articleShortDescription": "Investing in the Indian stock market is a pathway to financial growth. However, concerns about Annual Maintenance Charges (AMC) in Demat accounts can deter investors. But what if you could have a lifetime free Demat account with no AMC fees? Enter m.Stock - offering a game-changing solution for Indian investors."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 159,
         "articlePublishDate": "2023-09-25",
         "articleHrefURL": "zero-balance-demat-account",
@@ -1896,7 +1896,7 @@
         "articleShortDescription": "Investing in the Indian stock market can be a rewarding venture, and a Demat account becomes an indispensable tool to safeguard your investments. A Demat account stores your shares and securities electronically, providing you with convenience, security, and seamless trading without the complexities of dealing with physical certificates. In recent times, the zero balance Demat Account has gained immense popularity among investors. This innovative account type allows individuals to enter the stock market without the burden of maintaining a minimum balance."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 160,
         "articlePublishDate": "2023-09-26",
         "articleHrefURL": "cashless-share-market-trading-with-margin-pledge",
@@ -1908,7 +1908,7 @@
         "articleShortDescription": "Opportunities in the stock market are endless. But funding available with investors and traders is limited. This means investors end up missing out on investment and trading opportunities due to lack of capital. This is where Margin Trading Facility (eMargin) comes to the rescue as investors get up to 80% funding against 20% capital."
     },
     {
-        "articleIsActive": false,
+        "isPublished": false,
         "articleSortOrder": 161,
         "articlePublishDate": "2023-09-26",
         "articleHrefURL": "cashless-share-market-trading-with-margin-pledge-post-login",
@@ -1920,7 +1920,7 @@
         "articleShortDescription": "Opportunities in the stock market are endless. But funding available with investors and traders is limited. This means investors end up missing out on investment and trading opportunities due to lack of capital. This is where Margin Trading Facility (eMargin) comes to the rescue as investors get up to 80% funding against 20% capital."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 162,
         "articlePublishDate": "2023-09-26",
         "articleHrefURL": "difference-between-mutual-funds-and-share-market",
@@ -1932,7 +1932,7 @@
         "articleShortDescription": "When it comes to investing in the financial market, people are often left confused between the two popular options: mutual funds vs shares. While both offer opportunities for wealth creation across various time horizons, they differ significantly in their structure, risk profile, and investment approach. Let us explore the fundamental differences between mutual funds and shares, so that you can make well-informed decisions that align with your financial goals."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 163,
         "articlePublishDate": "2023-09-26",
         "articleHrefURL": "what-are-mid-cap-funds",
@@ -1944,7 +1944,7 @@
         "articleShortDescription": "When it comes to investing in the Indian stock market, you might find yourself caught between the stability of large-cap funds and the allure of high-growth potential in small-cap funds. If you seek a sweet spot that offers a balance of risk and returns, then mid cap mutual funds might just be the ideal choice for you."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 164,
         "articlePublishDate": "2023-09-26",
         "articleHrefURL": "what-is-asset-allocation-funds",
@@ -1956,7 +1956,7 @@
         "articleShortDescription": "Investing in the financial markets can be a daunting task, especially with the vast array of investment options available. One popular approach to managing risk and optimising returns is through Asset Allocation Funds. In this guide, we'll explore the concept of asset allocation and how multi-asset allocation funds work. We'll delve into the different types of asset-allocation strategies and factors to consider when choosing the right strategy for your investment objectives."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 165,
         "articlePublishDate": "2023-09-26",
         "articleHrefURL": "difference-between-sip-and-mutual-funds",
@@ -1968,7 +1968,7 @@
         "articleShortDescription": "Investing in funds is a vital part of financial planning, and mutual funds along with Systematic Investment Plans (SIPs) are widely chosen as investment options. While both aim to grow your wealth, they vary in their structures and investment approaches."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 166,
         "articlePublishDate": "2023-10-06",
         "articleHrefURL": "client-master-report",
@@ -1980,7 +1980,7 @@
         "articleShortDescription": "Understanding some essential documents is vital for investors like you to keep your financial investments and securities trading properly organised and tracked. The Client Master Report (CMR) holds a significant role, especially if you have a demat account. As you delve into the concept of CMR, you will discover its crucial role in maintaining transparency and compliance. From tracking your investments to facilitating seamless transactions, the CMR copy becomes an invaluable asset in your financial toolkit."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 167,
         "articlePublishDate": "2023-10-06",
         "articleHrefURL": "how-to-enter-and-exit-in-intraday",
@@ -1992,7 +1992,7 @@
         "articleShortDescription": "Intraday trading, also referred to as day trading, is a widely favoured trading method involving the buying and selling of financial instruments within the span of a single trading day. Mastering the art of how to decide entry and exit in intraday trading is essential for traders looking to capitalise on short-term price movements."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 168,
         "articlePublishDate": "2023-10-06",
         "articleHrefURL": "mutual-fund-vs-fixed-deposit",
@@ -2004,7 +2004,7 @@
         "articleShortDescription": "When it comes to investing your hard-earned money, there are several options available to you. The variety of options makes it highly important to do your research and make informed decisions regarding investments that are aligned to your financial objectives. Fixed Deposits (FDs) and Mutual Funds are two prominent investment instruments, each with their characteristics. Let us walk you through the key differences between mutual funds and fixed deposits, and highlight their prominent attributes to help you make a knowledge-based choice to achieve your financial goals."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 169,
         "articlePublishDate": "2023-10-06",
         "articleHrefURL": "fixed-deposit-vs-stock-market",
@@ -2016,7 +2016,7 @@
         "articleShortDescription": "With increased financial literacy, recent generations have firmly grasped the difference between saving and investing. Among the plethora of avenues for investments, Fixed Deposits (FDs) and the Stock Market stand out as popular choices. Let us evaluate the pros and cons of each and help you figure out your ideal option in the fixed deposit vs stock market debate."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 170,
         "articlePublishDate": "2023-10-06",
         "articleHrefURL": "top-20-fmcg-stocks-in-india",
@@ -2028,7 +2028,7 @@
         "articleShortDescription": "For investors seeking stable and potentially lucrative investments, the Fast-Moving Consumer Goods (FMCG) sector has always been a popular choice since FMCG companies offer products that are in constant demand and form an essential part of our daily lives."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 171,
         "articlePublishDate": "2023-10-06",
         "articleHrefURL": "top-upcoming-ipo-in-2023",
@@ -2040,7 +2040,7 @@
         "articleShortDescription": "As the Indian economy continues to grow and evolve, the financial markets are witnessing an influx of new and exciting investment opportunities. One such avenue that has caught the attention of investors is Initial Public Offerings (IPOs). 2023 promises to be a year brimming with potential as several companies gear up for their IPOs."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 172,
         "articlePublishDate": "2023-10-16",
         "articleHrefURL": "what-is-elss-mutual-funds-and-its-benefits",
@@ -2052,7 +2052,7 @@
         "articleShortDescription": "Out of the many different types of mutual funds available in the Indian financial markets, ELSS is consistently among the most popular. Investing in such a fund is a good way to gain diversified exposure to the Indian equity market. Wondering what ELSS is? Here’s a comprehensive guide explaining the meaning of ELSS, how it works and the various benefits you get by investing in it."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 173,
         "articlePublishDate": "2023-10-16",
         "articleHrefURL": "swp-meaning-in-mutual-fund",
@@ -2064,7 +2064,7 @@
         "articleShortDescription": "When it comes to liquidating mutual funds, most investors tend to either redeem all the units or simply just a part of their holdings. However, there’s another redemption method that many investors are not aware of - SWP or Systematic Withdrawal Plan. Wondering what the meaning of the Systematic Withdrawal Plan is? Here’s a comprehensive guide explaining the concept, how it works and the various advantages it offers."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 174,
         "articlePublishDate": "2023-10-16",
         "articleHrefURL": "type-of-trading-account",
@@ -2076,7 +2076,7 @@
         "articleShortDescription": "A trading account is a mandatory requirement for buying and selling securities in the secondary market. When linked with a demat account and a bank account, it facilitates seamless trades and dematerialised holdings. However, if you are just getting started with your journey in the financial markets, you need to know what the different types of trading accounts are."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 175,
         "articlePublishDate": "2023-10-16",
         "articleHrefURL": "protect-trading-account",
@@ -2088,7 +2088,7 @@
         "articleShortDescription": "The trading account is an indispensable tool for purchasing and selling stocks, bonds, mutual funds and other securities through the stock exchange. In addition to being the gateway for participating in the secondary market, your trading account also holds your investment capital safely."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 176,
         "articlePublishDate": "2023-10-16",
         "articleHrefURL": "what-is-liquid-funds",
@@ -2100,7 +2100,7 @@
         "articleShortDescription": "When you think of mutual funds, you may typically think of a long-term investment horizon spanning several years. While it is true that many mutual funds may have the potential to deliver better returns over the long run, some funds are specifically created with short-term investment horizons as the defining feature."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 177,
         "articlePublishDate": "2023-10-16",
         "articleHrefURL": "what-is-drhp",
@@ -2112,7 +2112,7 @@
         "articleShortDescription": "In the world of initial public offerings (IPOs) and stock market investments, the Draft Red Herring Prospectus (DRHP) is a crucial document that plays a significant role in providing essential information to potential investors. Understanding what an IPO DRHP is, and its importance, is essential for anyone looking to participate in IPOs. Let us understand the concept of DRHP and explore its significance in the stock market in the context of IPOs."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 178,
         "articlePublishDate": "2023-10-26",
         "articleHrefURL": "what-is-exit-load-in-mutual-funds",
@@ -2124,7 +2124,7 @@
         "articleShortDescription": "Investing in mutual funds is a strategy that can potentially help your money grow over time. However, it's crucial to comprehend the different facets that can influence your investment journey. One such crucial aspect is the concept of \"exit load.\" While the term might initially seem unfamiliar, gaining a clear understanding of its meaning and implications is particularly important, especially for individuals dealing with mutual funds in the context of India's financial landscape."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 179,
         "articlePublishDate": "2023-10-26",
         "articleHrefURL": "best-sip-to-invest-now",
@@ -2136,7 +2136,7 @@
         "articleShortDescription": "In the constantly changing landscape of Indian finance, seeking the best way to invest your money is both necessary and prudent. Systematic Investment Plans, or SIPs, are renowned for their simplicity and potential to give good returns. SIP is a smart way to invest that lets you put in a small or large amount, depending on what you want and your financial goals."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 180,
         "articlePublishDate": "2023-10-26",
         "articleHrefURL": "chit-fund-vs-mutual-funds",
@@ -2148,7 +2148,7 @@
         "articleShortDescription": "When it comes to growing your hard-earned money, the world of investments offers a variety of choices. Two such options that often find themselves under the spotlight are Mutual Funds and Chit Funds. These financial instruments have gained popularity across India, enticing individuals with promises of financial growth. But, what are the differences between these two, and which one suits your financial goals better?"
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 181,
         "articlePublishDate": "2023-10-26",
         "articleHrefURL": "best-mutual-fund-for-lumpsum-investment",
@@ -2160,7 +2160,7 @@
         "articleShortDescription": "Navigating the world of investments demands sharp decision-making, especially when considering lump sum investments. Amid the variety of investment options, mutual funds stand out as a dependable option. Mutual funds enable you to pool your resources with fellow investors, professionally managed by experts."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 182,
         "articlePublishDate": "2023-10-26",
         "articleHrefURL": "top-10-mutual-fund-houses-in-india",
@@ -2172,7 +2172,7 @@
         "articleShortDescription": "Today, there is a wide range of investment options available to invest your hard earned money. Mutual funds, in particular, have become a popular choice for both experienced investors and those new to the financial world. In India, where the investment market is vast and diverse, selecting the right mutual fund house becomes crucial."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 183,
         "articlePublishDate": "2023-10-26",
         "articleHrefURL": "what-is-free-demat-account",
@@ -2184,7 +2184,7 @@
         "articleShortDescription": "A Demat account plays a vital role in trading and investment activities. But have you ever wondered about a free demat account and its benefits? Exploring the details of a free Demat account and the benefits it presents can offer you an economical and rewarding way to trade and invest in securities. This blog aims to unveil the details of this concept and highlight the benefits of adopting a free demat account."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 184,
         "articlePublishDate": "2023-10-26",
         "articleHrefURL": "demat-account-opening-procedure",
@@ -2196,7 +2196,7 @@
         "articleShortDescription": "You've probably heard about Demat Accounts, but do you really know what they are and how they can help you? This article will help simplify the complexities of Demat accounts, shedding light on various concepts and procedures of a Demat account."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 185,
         "articlePublishDate": "2023-11-06",
         "articleHrefURL": "income-tax-act",
@@ -2208,7 +2208,7 @@
         "articleShortDescription": "The Income Tax Act of 1961 (ITA) is a comprehensive legal structure that covers all elements related to income tax. It includes defining what counts as income, setting tax rates, and outlining how taxes are calculated. As an Indian taxpayer, you frequently engage with this Act, though it can be a bit complex to comprehend. In this blog, we'll explain how the Income Tax Act works for individuals, the rules it has, its connection with the Finance Act, and the impact of government notifications and circulars. We'll also explore the Finance Act in detail, discussing recent changes to income tax slabs. If you wish to know about the differences between the new and old tax rules, this guide is here to offer support."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 186,
         "articlePublishDate": "2023-11-06",
         "articleHrefURL": "what-is-gst-registration",
@@ -2220,7 +2220,7 @@
         "articleShortDescription": "In the field of taxation within India, the introduction of \"Goods and Services Tax\" or GST has led to a significant and fundamental change. It is a type of tax that was created to replace several other individual taxes like VAT, Excise duty, service tax etc. prevalent in the country. Its aim was to establish a single tax system to make collecting taxes easier and improve the efficiency of the process. GST has made the tax system clearer and more organised. In this article, we'll discuss different aspects, including the types of GST categories, necessary paperwork, and the fees linked with the process."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 187,
         "articlePublishDate": "2023-11-06",
         "articleHrefURL": "how-to-login-income-tax-portal",
@@ -2232,7 +2232,7 @@
         "articleShortDescription": "It is the duty and responsibility of each Indian taxpayer to understand and manage their income tax liabilities. To make this process easier in the digital age, the Income Tax Department of India has created the Income Tax Login portal. This online platform is designed to simplify the complex task of filing your income tax. In this article, we'll guide you through using the Income Tax Login portal effectively, ensuring a smooth experience when filing your income tax returns."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 188,
         "articlePublishDate": "2023-11-06",
         "articleHrefURL": "best-penny-stock",
@@ -2244,7 +2244,7 @@
         "articleShortDescription": "If you're new to investing and looking for an inexpensive way to start, you might consider penny stocks. These are very affordable stocks with low trading activity. These stocks, usually available at lower prices, hold the promise of notable returns. If you wish to learn about penny stocks in India, this comprehensive guide has been crafted to cater to your needs. In this blog post, we will talk about the best penny stocks to buy today in India. Additionally, we will offer essential insights into the factors you should consider while making your choices."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 189,
         "articlePublishDate": "2023-11-06",
         "articleHrefURL": "trade-analysis",
@@ -2256,7 +2256,7 @@
         "articleShortDescription": "Trading in the financial markets is a skill that takes time to master. Many traders believe that trading simply involves the purchase and sale of securities. However, that’s far from the actual truth. As a matter of fact, in-depth research and analysis also forms a major part of financial market trading. This is precisely why experienced traders often dedicate time and effort towards trade analysis. By analyzing their trades before and after they’re executed..."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 190,
         "articlePublishDate": "2023-11-13",
         "articleHrefURL": "direct-vs-regular-mutual-funds",
@@ -2268,7 +2268,7 @@
         "articleShortDescription": "In the intricate landscape of mutual funds, investors often have to choose between direct plan vs regular plan, each bearing distinct characteristics that can significantly impact their financial outcomes. In this blog, we embark on a detailed exploration of the direct vs regular mutual fund conundrum, unravelling the finer points and implications to equip you with the insights needed to make a well-informed decision."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 191,
         "articlePublishDate": "2023-11-13",
         "articleHrefURL": "how-to-calculate-sip-returns",
@@ -2280,7 +2280,7 @@
         "articleShortDescription": "A Systematic Investment Plan (SIP) lets you invest a fixed sum of money regularly in a mutual fund scheme for a predetermined tenure. Advantages of SIP include potential for higher returns through compounding and lower overall cost of investment. As an investor, it is crucial to know how to calculate SIP returns to truly ascertain if your selected mutual fund scheme is working for you or not. In this article, we’re going to take a look at three different ways through which you can calculate the returns from a SIP and the importance of each of these methods."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 192,
         "articlePublishDate": "2023-11-13",
         "articleHrefURL": "how-to-analyse-mutual-funds",
@@ -2292,7 +2292,7 @@
         "articleShortDescription": "Mutual funds are unique financial instruments that pool funds from multiple investors and invest in a plethora of different assets. These assets can be stocks, bonds, debentures or a mix of both. Since mutual funds invest in market-linked securities, their performance is directly correlated with the market movements. That said, due to the differences in asset allocations, not all funds may perform equally over the same period. This makes mutual fund performance a crucial factor you need to consider before investing. Continue reading to find out more about how to evaluate a mutual fund."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 193,
         "articlePublishDate": "2023-11-13",
         "articleHrefURL": "what-is-colleteral-margin",
@@ -2304,7 +2304,7 @@
         "articleShortDescription": "Navigating the world of finance can be daunting, especially when it comes to borrowing and investing. If you've ever dealt with investments, stocks, or trading, you might have come across the term \"collateral margin\". Terms like \"margin,\" \"collateral,\" and \"leverage\" can become tangled in a web of complexity. Yet, understanding these concepts is vital to making informed decisions that align with your financial goals. At its essence, collateral margin offers a bridge that connects the world of investment and credit, empowering you to optimise your financial strategies and elevate your financial standing."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 194,
         "articlePublishDate": "2023-11-13",
         "articleHrefURL": "tips-for-margin-trading",
@@ -2316,7 +2316,7 @@
         "articleShortDescription": "Margin trading is a popular strategy in financial markets that allows traders to amplify their potential returns by borrowing funds from a broker. One of the key tools used in margin trading is the Margin Trading Facility (MTF). In this blog, we will explore what MTF is, the benefits of margin trading, and provide valuable tips for successful margin trading. By following these tips, you will be in a position to maximise your returns while effectively managing the associated risks."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 195,
         "articlePublishDate": "2023-11-13",
         "articleHrefURL": "greenshoe-option",
@@ -2328,7 +2328,7 @@
         "articleShortDescription": "Initial Public Offerings (IPOs) offer access to promising companies during their early stages, potentially resulting in significant returns and provide the opportunity for capital appreciation as the company grows and expands. These are just some of the reasons why IPOs have become quite popular with lakhs of investors applying for them regularly, often leading to situations of over-subscription or skewed demand and supply."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 196,
         "articlePublishDate": "2023-11-13",
         "articleHrefURL": "margin-against-stock",
@@ -2340,7 +2340,7 @@
         "articleShortDescription": "Some trades require you to invest a lot of capital, which you may not always possess. Arranging funds at short notice might be difficult. At the same time you don't want to miss out on lucrative trading opportunities. This is where the concept of margin against shares can help. As a trader, you can use this facility to bridge capital shortfall and ensure you don’t miss out on profitable opportunities. Read to know more about margin against shares and how it works."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 197,
         "articlePublishDate": "2023-11-13",
         "articleHrefURL": "churning-mutual-funds",
@@ -2352,7 +2352,7 @@
         "articleShortDescription": "Mutual funds are often touted to be one of the best market-linked investment options available in India. One of the major advantages of investing in mutual funds is that they’re diversified financial products offering exposure to a range of different assets. That said, mutual fund investments are more geared towards long-term wealth creation than short-term gains. This is precisely why many investors looking for quick gains often refrain from investing in such funds. Here’s where mutual fund churning comes into the picture. It is a technique that enables you to generate short-term gains. Read on to learn all about this practice."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 198,
         "articlePublishDate": "2023-11-20",
         "articleHrefURL": "how-to-analyse-an-ipo",
@@ -2364,7 +2364,7 @@
         "articleShortDescription": "If you find yourself drawn to the thrill of investing in companies at their early stages, then understanding how to analyse IPOs (Initial Public Offerings) is your key to unlocking their potential. In this comprehensive guide, we'll take you on a journey through the exciting process of IPO analysis, equipping you with the knowledge and tools needed to make well-informed investment decisions. IPOs have the power to reshape a company's future and present remarkable growth prospects. However, the allure of IPOs can be accompanied by uncertainty and risks. That's why it's essential to navigate this landscape with confidence and a strategic approach. By the end of this guide, you'll be equipped to conduct IPO stock analysis like a seasoned investor, allowing you to identify promising opportunities and steer clear of potential pitfalls."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 199,
         "articlePublishDate": "2023-11-20",
         "articleHrefURL": "10-best-shares-to-buy-today-for-long-term",
@@ -2376,7 +2376,7 @@
         "articleShortDescription": "Investing in the stock market can be quite rewarding, especially when you take a long-term approach. While short-term investments can be unpredictable and volatile, focusing on long-term stocks allows you to capitalise on the growth potential of well-established companies. If you are an investor searching for the 10 best shares to buy today for the long term, it's essential to make well-informed decisions to maximise your returns. In this article, we'll explore the best long-term stocks to buy in 2023, tailored specifically for the Indian market."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 200,
         "articlePublishDate": "2023-11-20",
         "articleHrefURL": "income-tax-return-in-india",
@@ -2388,7 +2388,7 @@
         "articleShortDescription": "In the growth of our nation, your role as a responsible citizen is vital. Within this journey, income tax is a significant aspect. As per the regulations outlined in Indian income tax laws, the filing of an IT return is a requisite for eligible individuals and businesses with income for the year. This process aids in the acknowledgement of taxable income, determination of tax obligations, and assertion of claims for applicable tax deductions. This blog aims to guide you on how to file an income tax return in India, ensuring confidence and reducing stress."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 201,
         "articlePublishDate": "2023-11-20",
         "articleHrefURL": "tax-on-mutual-fund",
@@ -2400,7 +2400,7 @@
         "articleShortDescription": "To make the most of your investments, understanding the tax implications on mutual funds is a crucial aspect that every Indian investor should grasp. Knowing the intricacies of taxes associated with mutual funds, from returns to withdrawals, helps you stay on top of your personal finances. In this guide, we'll unravel the tax landscape in the Indian context, shedding light on key considerations that can impact your financial outcomes."
     },
     {
-        "articleIsActive": true,
+        "isPublished": true,
         "articleSortOrder": 202,
         "articlePublishDate": "2023-11-20",
         "articleHrefURL": "ipo-valuation",

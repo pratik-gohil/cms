@@ -12,7 +12,8 @@ export const retriveArticleData = (formData: FormData) => {
         articleShortDescription: "",
         isPublished: false,
         redirectionURL: "",
-        metaTags: "",
+        pageTitle: "",
+        pageDescription: "",
     };
 
     formData.forEach((value, key) => {

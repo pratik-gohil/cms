@@ -11,6 +11,7 @@ import { actionResult, superValidate } from "sveltekit-superforms/client";
 import type { RequestEvent } from "./$types";
 import { writeFileSync } from "fs";
 import { retriveArticleData } from "$lib/utils/article";
+import { createArticle } from "$lib/controllers/Article";
 
 export async function load({ params }: LoadEvent): Promise<{ id: String | undefined, categories: ArticleCategory[], article?: ArticleIdentifierWithCategory, form: SuperValidated<FormSchema> }> {
     const categoryResponse = await fetch(BASE_URL + '/api/categories')
@@ -51,38 +52,7 @@ export const actions = {
             const formData = await event.request.formData()
             await handleActionError(formData)
 
-            const { articleTitle,
-                articleImageSrc,
-                articleImageAlt,
-                articleImageTitle,
-                articleShortDescription,
-                isPublished, articleHrefURL, articleCategoryId, articleContents, redirectionURL, metaTags } = retriveArticleData(formData);
-
-            article = await prisma.article.create({
-                data: {
-                    articleContents,
-                    articleTitle,
-                    articleImageSrc,
-                    articleHrefURL,
-                    articleImageAlt,
-                    articleImageTitle,
-                    articleShortDescription,
-                    isPublished,
-                    redirectionURL,
-                    metaTags,
-                    articleCategory: {
-                        connect: {
-                            id: articleCategoryId
-                        }
-                    },
-                    article_identifier: {
-                        create: {}
-                    },
-                },
-                include: {
-                    article_identifier: true
-                }
-            })
+            article = await createArticle(formData)
 
             actionResult('redirect', '/article/' + article.article_identifier[0].id, 303);
             success = true;
@@ -110,7 +80,7 @@ export const actions = {
                 articleShortDescription,
                 articleHrefURL, articleCategoryId, publish, articleContents,
                 redirectionURL,
-                metaTags, } = retriveArticleData(formData);
+                pageTitle, pageDescription, } = retriveArticleData(formData);
 
             if (articleImage && articleImage.size > 0) {
                 writeFileSync(`static/articles/${articleImage.name}`, Buffer.from(await articleImage.arrayBuffer()));
@@ -134,7 +104,7 @@ export const actions = {
                             articleShortDescription,
                             isPublished: publish,
                             redirectionURL,
-                            metaTags,
+                            pageTitle, pageDescription,
                             articleCategory: {
                                 connect: {
                                     id: articleCategoryId

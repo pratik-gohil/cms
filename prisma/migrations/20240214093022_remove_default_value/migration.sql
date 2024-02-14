@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "article" ALTER COLUMN "redirectionURL" DROP DEFAULT,
+ALTER COLUMN "pageDescription" DROP DEFAULT,
+ALTER COLUMN "pageTitle" DROP DEFAULT;
