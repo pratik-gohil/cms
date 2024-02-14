@@ -35,6 +35,16 @@
 	onMount(async () => {
 		const { default: Quill } = await import('quill');
 
+		// @ts-ignore
+		const { default: QuillBetterTable } = await import('quill-better-table');
+
+		Quill.register(
+			{
+				'modules/better-table': QuillBetterTable
+			},
+			true
+		);
+
 		// Formats objects for setting up the Quill editor
 		const formats = [
 			'header',
@@ -59,11 +69,29 @@
 
 		// Modules object for setting up the Quill editor
 		const modules = {
+			table: false, // disable table module
+			'better-table': {
+				operationMenu: {
+					items: {
+						unmergeCells: {
+							text: 'Another unmerge cells name'
+						}
+					},
+					color: {
+						colors: ['#fff', 'red', 'rgb(0, 0, 0)'], // colors in operationMenu
+						text: 'Background Colors' // subtitle
+					}
+				}
+			},
+			keyboard: {
+				bindings: QuillBetterTable.keyboardBindings
+			},
 			toolbar: {
 				container: '#toolbar',
 				handlers: {
 					undo: undoChange,
-					redo: redoChange
+					redo: redoChange,
+					addTable: () => addTable(3, 3)
 				}
 			},
 			history: {
@@ -79,6 +107,11 @@
 		}
 		function redoChange() {
 			quill.history.redo();
+		}
+
+		function addTable(x: number, y: number) {
+			const tableModule = quill.getModule('better-table');
+			tableModule.insertTable(x, y);
 		}
 
 		const quill = new Quill(editor, {
