@@ -82,8 +82,13 @@
 					Publish At: {entry?.createdAt ? new Date(entry?.createdAt).toDateString() : '-'}
 				</p>
 			</div>
-			<Button type="submit" formaction="?/delete" variant="destructive" class="px-10"
-				>Delete Article <Trash size={20} /></Button
+
+			<Button
+				disabled={id === 'new'}
+				type="submit"
+				formaction="?/delete"
+				variant="destructive"
+				class="px-10">Delete {title} <Trash size={20} /></Button
 			>
 		</div>
 	</div>
