@@ -150,6 +150,13 @@
 					<Form.Validation />
 				</Form.Item>
 			</Form.Field>
+			<Form.Field {config} name="metaTags">
+				<Form.Item>
+					<Form.Label>Meta Tags</Form.Label>
+					<Form.Textarea placeholder="<title>...</title>" rows={8} />
+					<Form.Validation />
+				</Form.Item>
+			</Form.Field>
 		</div>
 		<div class="flex-1">
 			<Form.Field {config} name="articleImage">
@@ -207,14 +214,21 @@
 			<Form.Field {config} name="articleImageAlt">
 				<Form.Item>
 					<Form.Label>Image Alt</Form.Label>
-					<Form.Input />
+					<Form.Input placeholder="Image Alt" />
 					<Form.Validation />
 				</Form.Item>
 			</Form.Field>
 			<Form.Field {config} name="articleImageTitle">
 				<Form.Item>
 					<Form.Label>Image Title</Form.Label>
-					<Form.Input />
+					<Form.Input placeholder="Image Title" />
+					<Form.Validation />
+				</Form.Item>
+			</Form.Field>
+			<Form.Field {config} name="redirectionURL">
+				<Form.Item>
+					<Form.Label>Redirection URL</Form.Label>
+					<Form.Input placeholder="Redirection URL" />
 					<Form.Validation />
 				</Form.Item>
 			</Form.Field>

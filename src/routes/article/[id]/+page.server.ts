@@ -56,7 +56,7 @@ export const actions = {
                 articleImageAlt,
                 articleImageTitle,
                 articleShortDescription,
-                isPublished, articleHrefURL, articleCategoryId, articleContents } = retriveArticleData(formData);
+                isPublished, articleHrefURL, articleCategoryId, articleContents, redirectionURL, metaTags } = retriveArticleData(formData);
 
             article = await prisma.article.create({
                 data: {
@@ -68,6 +68,8 @@ export const actions = {
                     articleImageTitle,
                     articleShortDescription,
                     isPublished,
+                    redirectionURL,
+                    metaTags,
                     articleCategory: {
                         connect: {
                             id: articleCategoryId
@@ -106,7 +108,9 @@ export const actions = {
                 articleImageAlt,
                 articleImageTitle,
                 articleShortDescription,
-                articleHrefURL, articleCategoryId, publish, articleContents } = retriveArticleData(formData);
+                articleHrefURL, articleCategoryId, publish, articleContents,
+                redirectionURL,
+                metaTags, } = retriveArticleData(formData);
 
             if (articleImage && articleImage.size > 0) {
                 writeFileSync(`static/articles/${articleImage.name}`, Buffer.from(await articleImage.arrayBuffer()));
@@ -129,6 +133,8 @@ export const actions = {
                             }),
                             articleShortDescription,
                             isPublished: publish,
+                            redirectionURL,
+                            metaTags,
                             articleCategory: {
                                 connect: {
                                     id: articleCategoryId

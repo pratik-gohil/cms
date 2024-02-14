@@ -10,6 +10,8 @@ const schemaObj = {
     articleImageAlt: z.string().min(2).max(250),
     articleShortDescription: z.string().min(2).max(250),
     articleContents: z.string(),
+    metaTags: z.string(),
+    redirectionURL: z.string()
 }
 
 export const formSchema = z.object(schemaObj);

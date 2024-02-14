@@ -10,7 +10,9 @@ export const retriveArticleData = (formData: FormData) => {
         articleImageAlt: "",
         articleImageTitle: "",
         articleShortDescription: "",
-        isPublished: false
+        isPublished: false,
+        redirectionURL: "",
+        metaTags: "",
     };
 
     formData.forEach((value, key) => {

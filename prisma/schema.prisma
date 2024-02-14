@@ -21,8 +21,12 @@ model article {
   articleHrefURL          String    @db.VarChar(255)
   articleImageTitle       String    @db.VarChar(255)
   articleImageAlt         String    @db.VarChar(255)
-  createdAt               DateTime  @default(now())
-  updatedAt               DateTime  @updatedAt
+
+  redirectionURL String @default("") @db.VarChar(255)
+  metaTags       String @default("") @db.Text
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   articleCategory    category?            @relation(fields: [articleCategoryId], references: [id])
   articleCategoryId  String?
