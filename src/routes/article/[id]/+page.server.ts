@@ -123,9 +123,13 @@ export const actions = {
     delete: async (event: RequestEvent) => {
         let success = false;
         try {
-            await prisma.article.delete({
+            await prisma.article.deleteMany({
                 where: {
-                    id: event.params.id
+                    article_identifier: {
+                        some: {
+                            id: Number(event.params.id)
+                        }
+                    }
                 }
             })
 

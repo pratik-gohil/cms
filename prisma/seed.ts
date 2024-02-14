@@ -2,7 +2,7 @@
 
 import { PrismaClient, Prisma } from '@prisma/client'
 import articlesData from "../articles.json" assert { type: "json" }
-import { capitalize } from '../src/lib/utils'
+import { capitalize } from '../src/lib/utils/common'
 
 const prisma = new PrismaClient()
 
@@ -29,7 +29,9 @@ if (args.includes("--clear")) {
 async function main() {
     console.log(`Start seeding ...`)
 
-    for (let { articleTitle, articleCategory, articleImageSrc, articleShortDescription, articleHrefURL, articlePublishDate, articleImageTitle, articleImageAlt } of articlesData) {
+    for (let { articleTitle, articleCategory, articleImageSrc, articleShortDescription,
+        articleHrefURL, articlePublishDate, articleImageTitle,
+        articleImageAlt } of articlesData) {
         articleCategory = capitalize(articleCategory)
         try {
             const article = await prisma.article.create({
@@ -43,6 +45,9 @@ async function main() {
                     isPublished: true,
                     articlePublishDate: new Date(articlePublishDate),
                     articleContents: "",
+                    pageDescription: "",
+                    pageTitle: "",
+                    redirectionURL: "",
                     articleCategory: {
                         connectOrCreate: {
                             create: {
