@@ -1,7 +1,9 @@
 // prisma/seed.ts
 
-import { PrismaClient } from '@prisma/client';
-import articlesData from '../articles.json' assert { type: 'json' };
+import { PrismaClient, Prisma } from '@prisma/client'
+import articlesData from "../articles.json" assert { type: "json" }
+import { capitalize } from '../src/lib/utils/common'
+import {categories} from '../categories' 
 
 const prisma = new PrismaClient();
 
@@ -24,53 +26,47 @@ if (args.includes('--clear')) {
 async function main() {
 	console.log(`Start seeding ...`);
 
-	for (let {
-		articleTitle,
-		articleCategory,
-		articleImageSrc,
-		articleShortDescription,
-		articleHrefURL,
-		articlePublishDate,
-		articleImageTitle,
-		articleImageAlt
-	} of articlesData) {
-		articleCategory = capitalize(articleCategory);
-		try {
-			const article = await prisma.article.create({
-				data: {
-					articleTitle,
-					articleImageSrc,
-					articleShortDescription: articleShortDescription.slice(0, 255),
-					articleHrefURL,
-					articleImageTitle,
-					articleImageAlt,
-					isPublished: true,
-					articlePublishDate: new Date(articlePublishDate),
-
-					articleContents: '',
-					articleCategory: {
-						connectOrCreate: {
-							create: {
-								name: articleCategory
-							},
-							where: {
-								name: articleCategory
-							}
-						}
-					},
-					article_identifier: {
-						create: {}
-					}
-				}
-			});
-			console.log(`Created article with id: ${article.id}`);
-		} catch (err) {
-			console.log(err);
-		}
-	}
-	console.log(`Seeding finished.`);
+    for (let { articleTitle, articleCategory, articleImageSrc, articleShortDescription,
+        articleHrefURL, articlePublishDate, articleImageTitle,
+        articleImageAlt } of articlesData) {
+        articleCategory = capitalize(articleCategory)
+        try {
+            const article = await prisma.article.create({
+                data: {
+                    articleTitle,
+                    articleImageSrc,
+                    articleShortDescription: articleShortDescription.slice(0, 255),
+                    articleHrefURL,
+                    articleImageTitle,
+                    articleImageAlt,
+                    isPublished: true,
+                    articlePublishDate: new Date(articlePublishDate),
+                    articleContents: "",
+                    pageDescription: "",
+                    pageTitle: "",
+                    redirectionURL: "",
+                    articleCategory: {
+                        connectOrCreate: {
+                            create: {
+                                name: articleCategory
+                            },
+                            where: {
+                                name: articleCategory
+                            }
+                        }
+                    },
+                    article_identifier: {
+                        create: {}
+                    }
+                }
+            })
+            console.log(`Created article with id: ${article.id}`)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    console.log(`Seeding finished.`)
 }
-
 async function seedCategories() {
 	try {
 		const categories_seed = categories.map(async (element) => {
@@ -84,15 +80,14 @@ async function seedCategories() {
 	} catch (error) {
 		console.log(error);
 	}
-}
-
-main()
-	.then(async () => {
-		await prisma.$disconnect();
-	})
-	.then(() => seedCategories())
-	.catch(async (e) => {
-		console.error(e);
-		await prisma.$disconnect();
-		process.exit(1);
-	});
+	
+	main()
+		.then(async () => {
+			await prisma.$disconnect();
+		})
+		.then(() => seedCategories())
+		.catch(async (e) => {
+			console.error(e);
+			await prisma.$disconnect();
+			process.exit(1);
+		});

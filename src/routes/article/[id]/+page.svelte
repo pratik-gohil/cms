@@ -5,6 +5,8 @@
 	import type { FormOptions } from 'formsnap';
 	import { onMount } from 'svelte';
 	import FormLayout from '$lib/components/FormLayout/FormLayout.svelte';
+	import QuillEditor from '$lib/components/QuillEditor/QuillEditor.svelte';
+	import { slugify } from '$lib/utils/common';
 
 	export let data;
 	$: ({ form, article } = data);
@@ -32,6 +34,16 @@
 	onMount(async () => {
 		const { default: Quill } = await import('quill');
 
+		// @ts-ignore
+		const { default: QuillBetterTable } = await import('quill-better-table');
+
+		Quill.register(
+			{
+				'modules/better-table': QuillBetterTable
+			},
+			true
+		);
+
 		// Formats objects for setting up the Quill editor
 		const formats = [
 			'header',
@@ -56,11 +68,29 @@
 
 		// Modules object for setting up the Quill editor
 		const modules = {
+			table: false, // disable table module
+			'better-table': {
+				operationMenu: {
+					items: {
+						unmergeCells: {
+							text: 'Another unmerge cells name'
+						}
+					},
+					color: {
+						colors: ['#fff', 'red', 'rgb(0, 0, 0)'], // colors in operationMenu
+						text: 'Background Colors' // subtitle
+					}
+				}
+			},
+			keyboard: {
+				bindings: QuillBetterTable.keyboardBindings
+			},
 			toolbar: {
 				container: '#toolbar',
 				handlers: {
 					undo: undoChange,
-					redo: redoChange
+					redo: redoChange,
+					addTable: () => addTable(3, 3)
 				}
 			},
 			history: {
@@ -76,6 +106,11 @@
 		}
 		function redoChange() {
 			quill.history.redo();
+		}
+
+		function addTable(x: number, y: number) {
+			const tableModule = quill.getModule('better-table');
+			tableModule.insertTable(x, y);
 		}
 
 		const quill = new Quill(editor, {
@@ -105,6 +140,12 @@
 			};
 		}
 	};
+
+	let title = '';
+	const handleTitleInput = (e: Event) => {
+		const target = e.target as HTMLInputElement;
+		title = target.value;
+	};
 </script>
 
 <FormLayout
@@ -121,10 +162,11 @@
 			<Form.Field {config} name="articleTitle">
 				<Form.Item>
 					<Form.Label>Title</Form.Label>
-					<Form.Input />
+					<Form.Input on:input={handleTitleInput} />
 					<Form.Validation />
 				</Form.Item>
 			</Form.Field>
+
 			<Form.Field {config} name="articleCategoryId">
 				<Form.Item>
 					<Form.Label>Category:</Form.Label>
@@ -144,8 +186,22 @@
 			</Form.Field>
 			<Form.Field {config} name="articleShortDescription">
 				<Form.Item>
-					<Form.Label>Short Description</Form.Label>
+					<Form.Label>Short Description:</Form.Label>
 					<Form.Textarea placeholder="Short Description" rows={8} />
+					<Form.Validation />
+				</Form.Item>
+			</Form.Field>
+			<Form.Field {config} name="pageTitle">
+				<Form.Item>
+					<Form.Label>Page Title:</Form.Label>
+					<Form.Input placeholder="Page Title" />
+					<Form.Validation />
+				</Form.Item>
+			</Form.Field>
+			<Form.Field {config} name="pageDescription">
+				<Form.Item>
+					<Form.Label>Page Description:</Form.Label>
+					<Form.Input placeholder="Page Description" />
 					<Form.Validation />
 				</Form.Item>
 			</Form.Field>
@@ -153,7 +209,7 @@
 		<div class="flex-1">
 			<Form.Field {config} name="articleImage">
 				<Form.Item>
-					<Form.Label for="articleImage">Image</Form.Label>
+					<Form.Label for="articleImage">Image:</Form.Label>
 					<div class="flex w-full flex-col gap-4 sm:flex-row lg:flex-col 2xl:flex-row">
 						<label
 							for="articleImage"
@@ -205,15 +261,30 @@
 			</Form.Field>
 			<Form.Field {config} name="articleImageAlt">
 				<Form.Item>
-					<Form.Label>Image Alt</Form.Label>
-					<Form.Input />
+					<Form.Label>Image Alt:</Form.Label>
+					<Form.Input placeholder="Image Alt" />
 					<Form.Validation />
 				</Form.Item>
 			</Form.Field>
 			<Form.Field {config} name="articleImageTitle">
 				<Form.Item>
-					<Form.Label>Image Title</Form.Label>
-					<Form.Input />
+					<Form.Label>Image Title:</Form.Label>
+					<Form.Input placeholder="Image Title" />
+					<Form.Validation />
+				</Form.Item>
+			</Form.Field>
+			<Form.Field {config} name="redirectionURL">
+				<Form.Item>
+					<Form.Label>Redirection URL:</Form.Label>
+					<Form.Input placeholder="Redirection URL" />
+					<Form.Validation />
+				</Form.Item>
+			</Form.Field>
+
+			<Form.Field {config} name="articleSlug">
+				<Form.Item>
+					<Form.Label>Slug:</Form.Label>
+					<Form.Input value={slugify(title || article?.article.articleTitle || '')} disabled />
 					<Form.Validation />
 				</Form.Item>
 			</Form.Field>
@@ -221,88 +292,9 @@
 	</div>
 	<Form.Field {config} name="articleContents">
 		<Form.Item>
-			<Form.Label>Article Content</Form.Label>
-			<div>
-				<div id="toolbar">
-					<span class="ql-formats">
-						<select class="ql-font" value="arial">
-							<option value="arial">Arial</option>
-							<option value="comic-sans">Comic Sans</option>
-							<option value="courier-new">Courier New</option>
-							<option value="georgia">Georgia</option>
-							<option value="helvetica">Helvetica</option>
-							<option value="lucida">Lucida</option>
-						</select>
-						<select class="ql-size" value="medium">
-							<option value="extra-small">Size 1</option>
-							<option value="small">Size 2</option>
-							<option value="medium">Size 3</option>
-							<option value="large">Size 4</option>
-						</select>
-						<select class="ql-header" value="3">
-							<option value="1">Heading</option>
-							<option value="2">Subheading</option>
-							<option value="3">Normal</option>
-						</select>
-					</span>
-					<span class="ql-formats">
-						<button class="ql-bold" />
-						<button class="ql-italic" />
-						<button class="ql-underline" />
-						<button class="ql-strike" />
-					</span>
-					<span class="ql-formats">
-						<button class="ql-list" value="ordered" />
-						<button class="ql-list" value="bullet" />
-						<button class="ql-indent" value="-1" />
-						<button class="ql-indent" value="+1" />
-					</span>
-					<span class="ql-formats">
-						<button class="ql-script" value="super" />
-						<button class="ql-script" value="sub" />
-						<button class="ql-blockquote" />
-						<button class="ql-direction" />
-					</span>
-					<span class="ql-formats">
-						<select class="ql-align" />
-						<select class="ql-color" />
-						<select class="ql-background" />
-					</span>
-					<span class="ql-formats">
-						<button class="ql-link" />
-						<button class="ql-image" />
-						<button class="ql-video" />
-					</span>
-					<span class="ql-formats">
-						<button class="ql-formula" />
-						<button class="ql-code-block" />
-						<button class="ql-clean" />
-					</span>
-					<span class="ql-formats">
-						<button class="ql-undo">
-							<!-- <CustomUndo /> -->
-							<svg viewBox="0 0 18 18">
-								<polygon class="ql-fill ql-stroke" points="6 10 4 12 2 10 6 10" />
-								<path class="ql-stroke" d="M8.09,13.91A4.6,4.6,0,0,0,9,14,5,5,0,1,0,4,9" />
-							</svg>
-						</button>
-						<button class="ql-redo">
-							<!-- <CustomRedo /> -->
-							<svg viewBox="0 0 18 18">
-								<polygon class="ql-fill ql-stroke" points="12 10 14 12 16 10 12 10" />
-								<path class="ql-stroke" d="M9.91,13.91A4.6,4.6,0,0,1,9,14a5,5,0,1,1,5-5" />
-							</svg>
-						</button>
-					</span>
-				</div>
-				<div bind:this={editor}></div>
-				<Form.Textarea value={articleContentsHTML} class="hidden" name="articleContents" />
-				<Form.Validation />
-			</div>
+			<Form.Label>Article Content:</Form.Label>
+			<QuillEditor bind:editor />
+			<Form.Textarea value={articleContentsHTML} class="hidden" name="articleContents" />
 		</Form.Item>
 	</Form.Field>
 </FormLayout>
-
-<style>
-	@import 'https://cdn.quilljs.com/1.3.6/quill.snow.css';
-</style>

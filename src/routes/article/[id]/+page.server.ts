@@ -11,6 +11,7 @@ import { actionResult, superValidate } from 'sveltekit-superforms/client';
 import type { RequestEvent } from './$types';
 import { writeFileSync } from 'fs';
 import { retriveArticleData } from '$lib/utils/article';
+import { createArticle } from '$lib/controllers/Article';
 
 export async function load({
 	params
@@ -56,41 +57,7 @@ export const actions = {
 			const formData = await event.request.formData();
 			await handleActionError(formData);
 
-			const {
-				articleTitle,
-				articleImageSrc,
-				articleImageAlt,
-				articleImageTitle,
-				articleShortDescription,
-				isPublished,
-				articleHrefURL,
-				articleCategoryId,
-				articleContents
-			} = retriveArticleData(formData);
-
-			article = await prisma.article.create({
-				data: {
-					articleContents,
-					articleTitle,
-					articleImageSrc,
-					articleHrefURL,
-					articleImageAlt,
-					articleImageTitle,
-					articleShortDescription,
-					isPublished,
-					articleCategory: {
-						connect: {
-							id: articleCategoryId
-						}
-					},
-					article_identifier: {
-						create: {}
-					}
-				},
-				include: {
-					article_identifier: true
-				}
-			});
+			article = await createArticle(formData);
 
 			actionResult('redirect', '/article/' + article.article_identifier[0].id, 303);
 			success = true;
@@ -120,7 +87,10 @@ export const actions = {
 				articleHrefURL,
 				articleCategoryId,
 				publish,
-				articleContents
+				articleContents,
+				redirectionURL,
+				pageTitle,
+				pageDescription
 			} = retriveArticleData(formData);
 
 			if (articleImage && articleImage.size > 0) {
@@ -148,6 +118,9 @@ export const actions = {
 								}),
 							articleShortDescription,
 							isPublished: publish,
+							redirectionURL,
+							pageTitle,
+							pageDescription,
 							articleCategory: {
 								connect: {
 									id: articleCategoryId
@@ -166,9 +139,13 @@ export const actions = {
 	delete: async (event: RequestEvent) => {
 		let success = false;
 		try {
-			await prisma.article.delete({
+			await prisma.article.deleteMany({
 				where: {
-					id: event.params.id
+					article_identifier: {
+						some: {
+							id: Number(event.params.id)
+						}
+					}
 				}
 			});
 

@@ -21,19 +21,25 @@ model article {
   articleHrefURL          String    @db.VarChar(255)
   articleImageTitle       String    @db.VarChar(255)
   articleImageAlt         String    @db.VarChar(255)
-  createdAt               DateTime  @default(now())
-  updatedAt               DateTime  @updatedAt
 
-  articleCategory    category?            @relation(fields: [articleCategoryId], references: [id])
-  articleCategoryId  String?
-  article_identifier article_identifier[]
+  redirectionURL  String @db.VarChar(255)
+  pageTitle       String @db.VarChar(255)
+  pageDescription String @db.VarChar(255)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  articleCategory   category? @relation(fields: [articleCategoryId], references: [id])
+  articleCategoryId String?
+
+  article_identifier article_identifier?
 }
 
 model article_identifier {
   id Int @id @default(autoincrement())
 
-  article   article @relation(fields: [articleId], references: [id])
-  articleId String
+  article   article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  articleId String  @unique @default(uuid())
 }
 
 model category {
