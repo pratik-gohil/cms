@@ -60,4 +60,12 @@ export function slugify(text: string) {
 		.replace(/\s/g, '-')
 		.replace(/[^a-zA-Z0-9-]/g, '')
 		.toLowerCase()
-} 
+}
+
+export function capitalize(string: string) {
+	return string
+		.toLowerCase()
+		.split(' ')
+		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+		.join(' ');
+};

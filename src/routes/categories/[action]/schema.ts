@@ -6,15 +6,15 @@ const schemaObj = {
 	status: z.number().max(2)
 };
 
-export const formSchema = z.object(schemaObj);
+export const categoryFormSchema = z.object(schemaObj);
 
-export const getFormSchemaWithDefaults = (category: any) => {
-	const schemaObjWithDefaults =
-		// @ts-ignore
-		Object.keys(schemaObj).reduce(
-			(a, i) => ({ ...a, [i]: schemaObj[i].default(category?.[i]) }),
-			{}
-		);
-	return z.object(schemaObjWithDefaults);
-};
-export type CategoryForm = typeof formSchema;
+// export const getFormSchemaWithDefaults = (category: any) => {
+// 	const schemaObjWithDefaults =
+// 		// @ts-ignore
+// 		Object.keys(schemaObj).reduce(
+// 			(a, i) => ({ ...a, [i]: schemaObj[i].default(category?.[i]) }),
+// 			{}
+// 		);
+// 	return z.object(schemaObjWithDefaults);
+// };
+// export type CategoryForm = typeof formSchema;

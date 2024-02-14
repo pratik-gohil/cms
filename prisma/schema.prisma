@@ -12,7 +12,7 @@ datasource db {
 
 model article {
   id                      String    @id @default(uuid())
-  articleIsActive         Boolean
+  isPublished             Boolean
   articleContents         String    @db.Text
   articleTitle            String    @db.VarChar(255)
   articleImageSrc         String    @db.VarChar(255)
@@ -24,8 +24,16 @@ model article {
   createdAt               DateTime  @default(now())
   updatedAt               DateTime  @updatedAt
 
-  articleCategory   category? @relation(fields: [articleCategoryId], references: [id])
-  articleCategoryId String?
+  articleCategory    category?            @relation(fields: [articleCategoryId], references: [id])
+  articleCategoryId  String?
+  article_identifier article_identifier[]
+}
+
+model article_identifier {
+  id Int @id @default(autoincrement())
+
+  article   article @relation(fields: [articleId], references: [id])
+  articleId String
 }
 
 model category {

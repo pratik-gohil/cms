@@ -6,43 +6,24 @@
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { Separator } from '$lib/components/ui/separator';
-    import {cn} from '$lib/utils.js'
-    
-
-    import type { SuperValidated } from "sveltekit-superforms";
-    import { categoryFormSchema, type CategoryFormType } from '$lib/validations/validationSchema.js';
-	import Switch from '$lib/components/ui/switch/switch.svelte';
-	import Label from '$lib/components/ui/label/label.svelte';
-	import { slugify } from '$lib/utils.js';
+	import { cn, slugify } from '$lib/utils/common.js';
+    import {categoryFormSchema} from '../schema'
+	
 	export let data ; 
     $: ({form}=data)
-    $: category_name = data.category.name;
-    $: slug = data.category.slug
-    console.log(data.category)
-    let loading = false
-
-    // let slug = slugify(category_name|| data.category.name ) ;
     
-    const handleChange = (e) => {
-    category_name = event.target.value;
-    slug = slugify(category_name)
-    };
-
-    // export const snapshot = {
-	// 	capture: () => category_name,
-	// 	restore: (value) => category_name = value
-	// };
-
-    console.log({
-        slug, category_name
-        })
+    $: slug = data.category.slug
+    
+    const handleChange = (e:InputEvent)=>{
+        console.log(e.target.value)
+    }
 
 </script>
 
 
 <div class="mb-4 flex justify-between">
     <span class="text-xl font-semibold">Category : {data.category.name} </span>
-    <!-- <div>
+    <div>
         <Form.Button
             type="submit"
             name="save"
@@ -55,14 +36,16 @@
                 add
             {/if}
         </Form.Button>
-    </div> -->
+    </div>
 </div>
 
-<Form.Root method="POST" {form} schema={categoryFormSchema} let:config>
+<Form.Root method="POST" form={form} schema={categoryFormSchema} let:config>
     <Form.Field {config} name='name'>
       <Form.Item>
         <Form.Label>Category Name</Form.Label>
-        <Form.Input name='name' bind:value={category_name} on:change={handleChange}  />
+        <Form.Input name='name' 
+         on:input={handleChange}  
+         />
         <Form.Validation />
       </Form.Item>
     </Form.Field>

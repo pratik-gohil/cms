@@ -1,41 +1,41 @@
 import prisma from "$lib/prisma";
-import { slugify } from "$lib/utils";
 import { redirect } from "@sveltejs/kit";
+import type { RequestEvent } from "./$types";
+import { retriveArticleData } from "$lib/utils/article";
 
-export async function POST(event) {
+export async function POST(event: RequestEvent) {
     const formData = (await event.request.formData())
 
-    var data = {};
-    formData.forEach((value, key) => data[key] = value);
-
-    // console.log(data)
-
-    data = {
-        ...data,
-        articleIsActive: data.articleIsActive === "true" || false,
-        articlePublishDate: data.articleIsActive ? new Date() : "",
-        articleHrefURL: slugify(data.articleTitle),
-        articleCategory: {
-            connect: {
-                id: data.articleCategoryId
-            }
-        }
-    }
-
-    delete data.articleCategoryId
+    const { articleTitle,
+        articleImageSrc,
+        articleImageAlt,
+        articleImageTitle,
+        articleShortDescription,
+        isPublished, articleHrefURL, articleCategoryId, articleContents } = retriveArticleData(formData);
 
     const article = await prisma.article.create({
-        data,
+        data: {
+            articleContents,
+            articleTitle,
+            articleImageSrc,
+            articleHrefURL,
+            articleImageAlt,
+            articleImageTitle,
+            articleShortDescription,
+            isPublished,
+            articleCategory: {
+                connect: {
+                    id: articleCategoryId
+                }
+            },
+            article_identifier: {
+                create: {}
+            },
+        },
+        include: {
+            article_identifier: true
+        }
     })
 
-    console.log(article)
-
-    throw redirect(303, '/article/' + article.id)
-
-    // return new Response(JSON.stringify({ success: true, article }), {
-    //     status: 200,
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // })
+    throw redirect(303, '/article/' + article.article_identifier[0].id)
 }

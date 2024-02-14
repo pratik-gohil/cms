@@ -7,7 +7,7 @@ export async function GET(e) {
 			id: e.params?.id
 		}
 	});
-	return new Response(JSON.stringify({ success: true, category }), {
+	return new Response(JSON.stringify({ success: true, data: category }), {
 		status: 200,
 		headers: {
 			'Content-Type': 'application/json'

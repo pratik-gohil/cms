@@ -4,8 +4,8 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
-	import { cn } from '$lib/utils.js';
-	import { Plus, Grid, Table as TableIcon } from 'radix-icons-svelte';
+	import { cn } from '$lib/utils/common.js';
+	import { Grid, Table as TableIcon, Plus } from 'radix-icons-svelte';
 
 	export let data;
 
@@ -55,10 +55,10 @@
 
 {#if active === 'Grid'}
 	<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
-		{#each data.articles.filter((article) => article.articleTitle
+		{#each data.articles.filter(({ article }) => article.articleTitle
 				.toLowerCase()
-				.includes(search.toLowerCase())) as article}
-			<a href={'/article/' + article.id}>
+				.includes(search.toLowerCase())) as { id, article }}
+			<a href={'/article/' + id}>
 				<ArticleCard {article} />
 			</a>
 		{/each}
@@ -80,10 +80,12 @@
 			</Table.Header>
 			<Table.Body>
 				{#each data.articles
-					.filter((article) => article.articleTitle.toLowerCase().includes(search.toLowerCase()))
-					.slice(0, 15) as article}
-					<Table.Row class="cursor-pointer" on:click={() => goto('/article/' + article.id)}>
-						<Table.Cell>{article.id}</Table.Cell>
+					.filter(({ article }) => article.articleTitle
+							.toLowerCase()
+							.includes(search.toLowerCase()))
+					.slice(0, 15) as { id, article }}
+					<Table.Row class="cursor-pointer" on:click={() => goto('/article/' + id)}>
+						<Table.Cell>{id}</Table.Cell>
 						<Table.Cell>{article.articleTitle}</Table.Cell>
 						<Table.Cell>
 							<span
@@ -93,21 +95,20 @@
 							</span>
 						</Table.Cell>
 						<Table.Cell>
-							{'Difference-between-Dematerialisation-and-Rematerialisation' ||
-								article.articleHrefURL}</Table.Cell
+							{article.articleHrefURL}</Table.Cell
 						>
 						<Table.Cell>{new Date(article.createdAt).toDateString()}</Table.Cell>
 						<Table.Cell>{new Date(article.articlePublishDate).toDateString()}</Table.Cell>
 						<Table.Cell>
 							<span
 								class={cn('rounded-md px-4 py-0.5 text-xs font-medium', {
-									'bg-blue-200': !article.articleIsActive,
-									'bg-green-200': article.articleIsActive,
-									'text-blue-800': !article.articleIsActive,
-									'text-green-800': article.articleIsActive
+									'bg-blue-200': !article.isPublished,
+									'bg-green-200': article.isPublished,
+									'text-blue-800': !article.isPublished,
+									'text-green-800': article.isPublished
 								})}
 							>
-								{article.articleIsActive ? 'Published' : 'Draft'}
+								{article.isPublished ? 'Published' : 'Draft'}
 							</span>
 						</Table.Cell>
 					</Table.Row>

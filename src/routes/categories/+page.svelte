@@ -4,7 +4,8 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
-	import { cn } from '$lib/utils.js';
+	import { cn } from '$lib/utils/common.js';
+	// import { cn } from '$lib/utils.js';
 	import { Plus, Grid, Table as TableIcon } from 'radix-icons-svelte';
 
 	export let data;
