@@ -121,10 +121,43 @@
 			placeholder: 'Write your article...'
 		});
 
+		// Add fonts to whitelist
+		let Font = Quill.import('formats/font');
+		// We do not add Sans Serif since it is the default
+		Font.whitelist = ['nunito-bold'];
+		Quill.register(Font, true);
+
+		let quillColor = document.querySelector('#quillColor') as HTMLInputElement;
+		if (quillColor) {
+			quillColor.oninput = function () {
+				let color = quillColor.value;
+				quill.format('color', color);
+			};
+		}
+
 		quill.root.innerHTML = article?.article.articleContents || '';
 
 		quill.on('text-change', function () {
-			articleContentsHTML = quill.root.innerHTML;
+			const correctULTagFromQuill = (str: string) => {
+				if (str) {
+					let re = /(<ol><li data-list="bullet">)(.*?)(<\/ol>)/;
+					let strArr = str.split(re);
+
+					while (strArr.findIndex((ele) => ele === '<ol><li data-list="bullet">') !== -1) {
+						let indx = strArr.findIndex((ele) => ele === '<ol><li data-list="bullet">');
+						if (indx) {
+							strArr[indx] = '<ul><li data-list="bullet">';
+							let endTagIndex = strArr.findIndex((ele) => ele === '</ol>');
+							strArr[endTagIndex] = '</ul>';
+						}
+					}
+					return strArr.join('');
+				}
+				return str;
+			};
+
+			let content = correctULTagFromQuill(quill.root.innerHTML);
+			articleContentsHTML = content;
 		});
 	});
 
