@@ -54,7 +54,7 @@ export const actions = {
 
             article = await createArticle(formData)
 
-            actionResult('redirect', '/article/' + article.article_identifier[0].id, 303);
+            actionResult('redirect', '/article/' + article.article_identifier.id, 303);
             success = true;
         } catch (err) {
             success = false;
@@ -62,7 +62,7 @@ export const actions = {
         }
 
         if (success) {
-            throw redirect(303, '/article/' + article.article_identifier[0].id)
+            throw redirect(303, '/article/' + article.article_identifier.id)
         } else {
             return fail(400);
         }
@@ -126,9 +126,7 @@ export const actions = {
             await prisma.article.deleteMany({
                 where: {
                     article_identifier: {
-                        some: {
-                            id: Number(event.params.id)
-                        }
+                        id: Number(event.params.id)
                     }
                 }
             })
