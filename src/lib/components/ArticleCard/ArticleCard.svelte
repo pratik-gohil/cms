@@ -7,12 +7,14 @@
 </script>
 
 <div class="relative h-full rounded border p-4">
-	<h1 class="mb-4 overflow-hidden text-ellipsis whitespace-nowrap font-semibold">
-		{article.articleTitle}
-		<Badge class="ml-2">
+	<div class="flex">
+		<h1 class="mb-4 overflow-hidden text-ellipsis whitespace-nowrap font-semibold">
+			{article.articleTitle}
+		</h1>
+		<Badge class="ml-auto h-fit whitespace-nowrap">
 			{article.articleCategory.name}
 		</Badge>
-	</h1>
+	</div>
 	<p class="mb-6 text-sm">
 		{article.articleShortDescription}
 	</p>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import ArticleCard from '$lib/components/ArticleCard/ArticleCard.svelte';
+	import Badge from '$lib/components/ui/badge/badge.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 	import * as Table from '$lib/components/ui/table/index.js';
@@ -41,14 +42,24 @@
 			class="flex items-center justify-center"
 			on:click={() => (active = 'Grid')}
 		>
-			<Grid size={20} class="text-secondary-foreground" />
+			<Grid
+				size={20}
+				class={cn('text-secondary-foreground', {
+					'text-primary': active === 'Grid'
+				})}
+			/>
 		</button>
 		<button
 			type="button"
 			class="flex items-center justify-center"
 			on:click={() => (active = 'Table')}
 		>
-			<TableIcon size={20} class="text-secondary-foreground" />
+			<TableIcon
+				size={20}
+				class={cn('text-secondary-foreground', {
+					'text-primary': active === 'Table'
+				})}
+			/>
 		</button>
 	</div>
 </div>
@@ -71,6 +82,7 @@
 				<Table.Row>
 					<Table.Head>ID</Table.Head>
 					<Table.Head>Title</Table.Head>
+					<Table.Head>Catrgory</Table.Head>
 					<Table.Head>Description</Table.Head>
 					<Table.Head>Slug</Table.Head>
 					<Table.Head>Created At</Table.Head>
@@ -87,6 +99,9 @@
 					<Table.Row class="cursor-pointer" on:click={() => goto('/article/' + id)}>
 						<Table.Cell>{id}</Table.Cell>
 						<Table.Cell>{article.articleTitle}</Table.Cell>
+						<Table.Cell>
+							<Badge>{article.articleCategory.name}</Badge>
+						</Table.Cell>
 						<Table.Cell>
 							<span
 								class="whitespace-no-wrap inline-block max-w-[300px] overflow-hidden text-ellipsis text-nowrap"
