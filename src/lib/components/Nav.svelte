@@ -12,7 +12,7 @@
 			<a href="/article/all">Article</a>
 		</li>
 		<li>
-			<a href="/categories">Categories</a>
+			<a href="/category/all">Categories</a>
 		</li>
 	</ul>
 
