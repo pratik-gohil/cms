@@ -46,9 +46,19 @@ model article_identifier {
 model category {
   id   String @id @default(uuid())
   name String @unique @db.VarChar(255)
-  slug  String  @unique @db.VarChar(255) 
-  status Boolean @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  faqs  faq[]
   articles article[]
+}
+
+model faq {
+  id   String @id @default(uuid())
+  title String 
+  description String 
+  sequence Int @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  category  category @relation(fields: [cat_id],references: [id])
+  cat_id String
 }

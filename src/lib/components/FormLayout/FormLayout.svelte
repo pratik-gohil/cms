@@ -15,6 +15,7 @@
 		options: FormOptions<typeof formSchema>,
 		entry: any,
 		title: string;
+
 </script>
 
 <Form.Root
@@ -37,14 +38,18 @@
 			<slot name="form" {config} />
 		</div>
 		<div class="flex h-fit min-w-[300px] flex-col gap-4">
-			<div
-				class={cn('flex items-center rounded border p-3', {
-					'text-blue-500': !entry?.isPublished,
-					'text-green-500': entry?.isPublished
-				})}
-			>
-				<DotFilled size={20} /> Editing {entry?.isPublished ? 'published' : 'draft'} version
-			</div>
+
+			{ #if title=='Articles'}
+					<div
+						class={cn('flex items-center rounded border p-3', {
+							'text-blue-500': !entry?.isPublished,
+							'text-green-500': entry?.isPublished
+						})}
+					>
+						<DotFilled size={20} /> Editing {entry?.isPublished ? 'published' : 'draft'} version
+					</div>
+				{/if}
+			
 			<div class="flex flex-col gap-4 bg-secondary p-4">
 				<h1 class="font-semibold">Information:</h1>
 				<Separator />

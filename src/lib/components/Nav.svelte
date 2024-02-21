@@ -20,7 +20,7 @@
 
 	<ul>
 		<li>
-			<a href="/faq">FAQ</a>
+			<a href="#">FAQ</a>
 		</li>
 	</ul>
 
@@ -32,3 +32,4 @@
 		</li>
 	</ul>
 </nav>
+ 

@@ -26,6 +26,9 @@ if (args.includes('--clear')) {
 async function main() {
 	console.log(`Start seeding ...`);
 
+
+
+
     for (let { articleTitle, articleCategory, articleImageSrc, articleShortDescription,
         articleHrefURL, articlePublishDate, articleImageTitle,
         articleImageAlt } of articlesData) {
@@ -67,27 +70,44 @@ async function main() {
     }
     console.log(`Seeding finished.`)
 }
-async function seedCategories() {
-	try {
-		const categories_seed = categories.map(async (element) => {
-			await prisma.category.create({
-				data: {
-					...element
-				}
-			});
-			console.log(`Created article with id: ${element.id}`);
-		});
-	} catch (error) {
-		console.log(error);
-	}
-	
-	main()
-		.then(async () => {
-			await prisma.$disconnect();
-		})
-		.then(() => seedCategories())
-		.catch(async (e) => {
-			console.error(e);
-			await prisma.$disconnect();
-			process.exit(1);
-		});
+// async function seedCategories() {
+//     try {
+//         const categories_seed = categories.map(async (element) => {
+//             await prisma.category.create({
+//                 data: {
+//                     ...element
+//                 }
+//             });
+//             console.log(`Created article with id: ${element.id}`);
+//         });
+//     } catch (error) {
+//         console.log(error);
+//     }
+    
+// }
+
+async function seedFaqs() {
+    try {
+        for( let i in [1, 2, 3, 4, 5]) {
+            await prisma.faq.create({
+                data: {
+                    title: `FAQ ${i}`,
+                    description: `This is FAQ ${i}`,
+                    cat_id:'40363ce3-1814-4a4a-a669-d06bccf496dd'
+            }
+        })
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+main().then(seedFaqs)
+    .then(async () => {
+        await prisma.$disconnect()
+    })
+    .catch(async (e) => {
+        console.error(e)
+        await prisma.$disconnect()
+        process.exit(1)
+    })
