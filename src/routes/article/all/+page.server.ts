@@ -3,10 +3,11 @@ import type { ArticleIdentifierWithCategory } from "$lib/types/common"
 import type { RequestEvent } from "./$types";
 
 export async function load(e: RequestEvent): Promise<{
-    articles: [number, ArticleIdentifierWithCategory[]]
+    articles: ArticleIdentifierWithCategory[],
+    count: number
 }> {
     const response = await fetch(BASE_URL + '/api/article/all' + e.url.search)
-    const { articles } = await response.json();
+    const { articles, count } = await response.json();
 
-    return { articles }
+    return { articles, count }
 }

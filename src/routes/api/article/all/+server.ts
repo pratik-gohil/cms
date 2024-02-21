@@ -6,7 +6,7 @@ export async function GET(event: RequestEvent) {
     const page = Number(event.url.searchParams.get("page")) || 1
     const limit = Number(event.url.searchParams.get("limit")) || 15
 
-    const articles = await prisma.$transaction([
+    const articlesCountTransaction = await prisma.$transaction([
         prisma.article_identifier.count({
             where: {
                 article: {
@@ -32,7 +32,8 @@ export async function GET(event: RequestEvent) {
                     }
                 }
             },
-            include: {
+            select: {
+                id: true,
                 article: {
                     include: {
                         articleCategory: true,
@@ -42,7 +43,9 @@ export async function GET(event: RequestEvent) {
         }),
     ])
 
-    return new Response(JSON.stringify({ success: true, articles }), {
+    const [count, articles] = articlesCountTransaction;
+
+    return new Response(JSON.stringify({ success: true, articles, count }), {
         status: 200,
         headers: {
             'Content-Type': 'application/json'

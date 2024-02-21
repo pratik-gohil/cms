@@ -11,7 +11,8 @@
 
 	export let data;
 
-	$: [count, articles] = data.articles;
+	$: count = data.count;
+	$: articles = data.articles;
 
 	let active = 'Table';
 	let search = '';
