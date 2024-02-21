@@ -2,80 +2,109 @@
 	import { Form } from 'formsnap';
 
 	export let editor: HTMLDivElement;
+
+	let colors = [
+		'#6610f2',
+		'#007bff',
+		'#6f42c1',
+		'#e83e8c',
+		'#dc3545',
+		'#fd7e14',
+		'#ffc107',
+		'#28a745',
+		'#20c997',
+		'#17a2b8',
+		'#ffffff',
+		'#6c757d',
+		'#343a40',
+		'#007bff',
+		'#6c757d',
+		'#28a745',
+		'#17a2b8',
+		'#ffc107',
+		'#dc3545',
+		'#f8f9fa',
+		'#343a40',
+		'transparent',
+		'custom-color'
+	];
 </script>
 
 <div>
 	<div id="toolbar">
 		<span class="ql-formats">
 			<select class="ql-font" value="arial">
-				<option value="arial">Arial</option>
-				<option value="comic-sans">Comic Sans</option>
-				<option value="courier-new">Courier New</option>
-				<option value="georgia">Georgia</option>
-				<option value="helvetica">Helvetica</option>
-				<option value="lucida">Lucida</option>
+				<option selected value="nunito-bold">Nunito Bold</option>
 			</select>
-			<select class="ql-size" value="medium">
-				<option value="extra-small">Size 1</option>
-				<option value="small">Size 2</option>
-				<option value="medium">Size 3</option>
-				<option value="large">Size 4</option>
+			<select title="size" class="ql-size" value="medium">
+				<option value="extra-small">Extra Small</option>
+				<option value="small">Small</option>
+				<option value="medium">Medium</option>
+				<option value="large">Large</option>
 			</select>
-			<select class="ql-header" value="3">
+			<select title="header" class="ql-header" value="1">
 				<option value="1">Heading</option>
 				<option value="2">Subheading</option>
 				<option value="3">Normal</option>
 			</select>
 		</span>
 		<span class="ql-formats">
-			<button class="ql-bold" />
-			<button class="ql-italic" />
-			<button class="ql-underline" />
-			<button class="ql-strike" />
+			<button title="bold" class="ql-bold" />
+			<button title="italic" class="ql-italic" />
+			<button title="underline" class="ql-underline" />
+			<button title="strike" class="ql-strike" />
 		</span>
 		<span class="ql-formats">
-			<button class="ql-list" value="ordered" />
-			<button class="ql-list" value="bullet" />
-			<button class="ql-indent" value="-1" />
-			<button class="ql-indent" value="+1" />
+			<button title="ordered" class="ql-list" value="ordered" />
+			<button title="bullet" class="ql-list" value="bullet" />
+			<button title="decrese indentation" class="ql-indent" value="-1" />
+			<button title="increase indentation" class="ql-indent" value="+1" />
 		</span>
 		<span class="ql-formats">
-			<button class="ql-script" value="super" />
-			<button class="ql-script" value="sub" />
-			<button class="ql-blockquote" />
-			<button class="ql-direction" />
+			<button title="super" class="ql-script" value="super" />
+			<button title="sub" class="ql-script" value="sub" />
+			<button title="blockquote" class="ql-blockquote" />
+			<button title="direction" class="ql-direction" />
 		</span>
 		<span class="ql-formats">
-			<select class="ql-align" />
-			<select class="ql-color" />
-			<select class="ql-background" />
+			<select title="align" class="ql-align" />
+			<select title="text color" class="ql-color">
+				{#each colors as hex}
+					<option value={hex} />
+				{/each}
+			</select>
+			<select title="background color" class="ql-background">
+				{#each colors as hex}
+					<option title={hex} value={hex} />
+				{/each}
+			</select>
 		</span>
 		<span class="ql-formats">
-			<button class="ql-link" />
-			<button class="ql-image" />
-			<button class="ql-video" />
+			<button title="link" class="ql-link" />
+			<button title="image" class="ql-image" />
+			<button title="video" class="ql-video" />
 		</span>
 		<span class="ql-formats">
-			<button class="ql-formula" />
-			<button class="ql-code-block" />
-			<button class="ql-clean" />
+			<button title="formula" class="ql-formula" />
+			<button title="code block" class="ql-code-block" />
+			<button title="clean" class="ql-clean" />
 		</span>
 		<span class="ql-formats">
-			<button class="ql-undo">
+			<button title="undo" class="ql-undo">
 				<!-- <CustomUndo /> -->
 				<svg viewBox="0 0 18 18">
 					<polygon class="ql-fill ql-stroke" points="6 10 4 12 2 10 6 10" />
 					<path class="ql-stroke" d="M8.09,13.91A4.6,4.6,0,0,0,9,14,5,5,0,1,0,4,9" />
 				</svg>
 			</button>
-			<button class="ql-redo">
+			<button title="redo" class="ql-redo">
 				<!-- <CustomRedo /> -->
 				<svg viewBox="0 0 18 18">
 					<polygon class="ql-fill ql-stroke" points="12 10 14 12 16 10 12 10" />
 					<path class="ql-stroke" d="M9.91,13.91A4.6,4.6,0,0,1,9,14a5,5,0,1,1,5-5" />
 				</svg>
 			</button>
-			<button class="ql-addTable">
+			<button title="table" class="ql-addTable">
 				<!-- <CustomAddTables /> -->
 				<svg
 					width="15"
@@ -91,6 +120,9 @@
 					></path></svg
 				>
 			</button>
+		</span>
+		<span class="ql-formats">
+			<input title="pick-color" type="color" id="quillColor" />
 		</span>
 	</div>
 	<div bind:this={editor}></div>

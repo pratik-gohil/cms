@@ -1,16 +1,58 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import ArticleCard from '$lib/components/ArticleCard/ArticleCard.svelte';
+	import Badge from '$lib/components/ui/badge/badge.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
+	import * as Pagination from '$lib/components/ui/pagination/index.js';
 	import * as Table from '$lib/components/ui/table/index.js';
 	import { cn } from '$lib/utils/common.js';
-	import { Grid, Table as TableIcon, Plus } from 'radix-icons-svelte';
+	import { Grid, Table as TableIcon, Plus, ChevronLeft, ChevronRight } from 'radix-icons-svelte';
+	import { onMount } from 'svelte';
 
 	export let data;
 
+	$: [count, articles] = data.articles;
+
 	let active = 'Table';
 	let search = '';
+
+	let index = 1;
+	$: perPage = 15;
+	$: siblingCount = 2;
+
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+
+	const url = new URL($page.url);
+
+	let mounted = false;
+	onMount(() => {
+		mounted = true;
+	});
+
+	$: {
+		search = url.searchParams.get('search') || '';
+		index = Number(url.searchParams.get('page')) || 1;
+	}
+
+	let delay: ReturnType<typeof setTimeout>;
+	$: {
+		clearTimeout(delay);
+		delay = setTimeout(() => {
+			if (mounted) {
+				url.searchParams.set('search', search);
+				goto(url.search);
+			}
+		}, 750);
+	}
+
+	$: {
+		url.searchParams.set('page', index.toString());
+
+		if (mounted) {
+			goto(url.search);
+		}
+	}
 </script>
 
 <div class="mb-4 flex justify-between">
@@ -25,15 +67,7 @@
 </div>
 
 <div class="mb-8 flex justify-between">
-	<Input
-		class="w-[300px]"
-		type="text"
-		placeholder="Search..."
-		on:input={function (event) {
-			// @ts-ignore
-			search = event.target.value;
-		}}
-	/>
+	<Input class="w-[300px]" type="text" placeholder="Search..." bind:value={search} autofocus />
 
 	<div class="flex gap-3">
 		<button
@@ -41,23 +75,31 @@
 			class="flex items-center justify-center"
 			on:click={() => (active = 'Grid')}
 		>
-			<Grid size={20} class="text-secondary-foreground" />
+			<Grid
+				size={20}
+				class={cn('text-secondary-foreground', {
+					'text-primary': active === 'Grid'
+				})}
+			/>
 		</button>
 		<button
 			type="button"
 			class="flex items-center justify-center"
 			on:click={() => (active = 'Table')}
 		>
-			<TableIcon size={20} class="text-secondary-foreground" />
+			<TableIcon
+				size={20}
+				class={cn('text-secondary-foreground', {
+					'text-primary': active === 'Table'
+				})}
+			/>
 		</button>
 	</div>
 </div>
 
 {#if active === 'Grid'}
 	<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
-		{#each data.articles.filter(({ article }) => article.articleTitle
-				.toLowerCase()
-				.includes(search.toLowerCase())) as { id, article }}
+		{#each articles as { id, article }}
 			<a href={'/article/' + id}>
 				<ArticleCard {article} />
 			</a>
@@ -71,6 +113,7 @@
 				<Table.Row>
 					<Table.Head>ID</Table.Head>
 					<Table.Head>Title</Table.Head>
+					<Table.Head>Catrgory</Table.Head>
 					<Table.Head>Description</Table.Head>
 					<Table.Head>Slug</Table.Head>
 					<Table.Head>Created At</Table.Head>
@@ -79,14 +122,13 @@
 				</Table.Row>
 			</Table.Header>
 			<Table.Body>
-				{#each data.articles
-					.filter(({ article }) => article.articleTitle
-							.toLowerCase()
-							.includes(search.toLowerCase()))
-					.slice(0, 15) as { id, article }}
+				{#each articles as { id, article }}
 					<Table.Row class="cursor-pointer" on:click={() => goto('/article/' + id)}>
 						<Table.Cell>{id}</Table.Cell>
 						<Table.Cell>{article.articleTitle}</Table.Cell>
+						<Table.Cell>
+							<Badge>{article.articleCategory.name}</Badge>
+						</Table.Cell>
 						<Table.Cell>
 							<span
 								class="whitespace-no-wrap inline-block max-w-[300px] overflow-hidden text-ellipsis text-nowrap"
@@ -117,3 +159,48 @@
 		</Table.Root>
 	</div>
 {/if}
+
+<Pagination.Root
+	{count}
+	{perPage}
+	{siblingCount}
+	let:pages
+	let:currentPage
+	class="mt-4 flex-row justify-between"
+>
+	<div>Showing {perPage * (index - 1) + 1} to {perPage * index} of {count}</div>
+	<Pagination.Content>
+		<Pagination.Item>
+			<Pagination.PrevButton disabled={index === 1} on:click={() => index--}>
+				<ChevronLeft class="h-4 w-4" />
+				<span class="hidden sm:block">Previous</span>
+			</Pagination.PrevButton>
+		</Pagination.Item>
+		{#each pages as page (page.key)}
+			{#if page.type === 'ellipsis'}
+				<Pagination.Item>
+					<Pagination.Ellipsis />
+				</Pagination.Item>
+			{:else}
+				<Pagination.Item>
+					<Pagination.Link
+						on:click={() => (index = page.value)}
+						{page}
+						isActive={((index > 0 && index) || currentPage) == page.value}
+					>
+						{page.value}
+					</Pagination.Link>
+				</Pagination.Item>
+			{/if}
+		{/each}
+		<Pagination.Item>
+			<Pagination.NextButton
+				disabled={index === pages[pages.length - 1].value}
+				on:click={() => index++}
+			>
+				<span class="hidden sm:block">Next</span>
+				<ChevronRight class="h-4 w-4" />
+			</Pagination.NextButton>
+		</Pagination.Item>
+	</Pagination.Content>
+</Pagination.Root>

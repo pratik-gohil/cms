@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Form from '$lib/components/ui/form';
-	import { DotFilled, Reload, Trash } from 'radix-icons-svelte';
+	import { DotFilled, Trash } from 'radix-icons-svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { Separator } from '$lib/components/ui/separator';
 	import type { z } from 'zod';
@@ -15,8 +15,6 @@
 		options: FormOptions<typeof formSchema>,
 		entry: any,
 		title: string;
-
-	let loading = false;
 </script>
 
 <Form.Root
@@ -31,32 +29,12 @@
 >
 	<div class="mb-4 flex justify-between">
 		<span class="text-xl font-semibold">{title} :</span>
-		<div>
-			<Form.Button
-				disabled={id === 'new' || loading}
-				type="submit"
-				name="publish"
-				value={(!entry?.isPublished).toString()}
-				class="text-sm"
-			>
-				{#if entry?.isPublished}
-					Un-Publish
-				{:else}
-					Publish
-				{/if}
-			</Form.Button>
-			<Form.Button type="submit" class="text-sm" disabled={loading}>
-				{#if loading}
-					<Reload class="mr-2 h-3 w-3 animate-spin" />
-				{/if}
-				Save</Form.Button
-			>
-		</div>
+		<slot name="action-buttons" />
 	</div>
 
 	<div class="flex flex-col gap-4 lg:flex-row">
 		<div class="flex-1">
-			<slot {config} />
+			<slot name="form" {config} />
 		</div>
 		<div class="flex h-fit min-w-[300px] flex-col gap-4">
 			<div

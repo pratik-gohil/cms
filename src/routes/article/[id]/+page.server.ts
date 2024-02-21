@@ -2,7 +2,7 @@ import prisma from '$lib/prisma';
 import { fail, redirect } from '@sveltejs/kit';
 
 import { BASE_URL } from '$env/static/private';
-import type { ArticleCategory } from '$lib/types/Category';
+import { ArticleCategory } from '$lib/types/Article';
 import type { ArticleIdentifierWithCategory } from '$lib/types/common';
 import type { LoadEvent } from '@sveltejs/kit';
 import type { SuperValidated } from 'sveltekit-superforms';
@@ -59,23 +59,23 @@ export const actions = {
 
 			article = await createArticle(formData);
 
-			actionResult('redirect', '/article/' + article.article_identifier[0].id, 303);
-			success = true;
-		} catch (err) {
-			success = false;
-			console.log(err);
-		}
+            actionResult('redirect', '/article/' + article.article_identifier.id, 303);
+            success = true;
+        } catch (err) {
+            success = false;
+            console.log(err)
+        }
 
-		if (success) {
-			throw redirect(303, '/article/' + article.article_identifier[0].id);
-		} else {
-			return fail(400);
-		}
-	},
-	update: async (event: RequestEvent) => {
-		try {
-			const formData = await event.request.formData();
-			const form = await handleActionError(formData);
+        if (success) {
+            throw redirect(303, '/article/' + article.article_identifier.id)
+        } else {
+            return fail(400);
+        }
+    },
+    update: async (event: RequestEvent) => {
+        try {
+            const formData = await event.request.formData()
+            const form = await handleActionError(formData);
 
 			const {
 				articleTitle,
@@ -131,23 +131,21 @@ export const actions = {
 				}
 			});
 
-			actionResult('success', { form });
-		} catch (err) {
-			console.log(err);
-		}
-	},
-	delete: async (event: RequestEvent) => {
-		let success = false;
-		try {
-			await prisma.article.deleteMany({
-				where: {
-					article_identifier: {
-						some: {
-							id: Number(event.params.id)
-						}
-					}
-				}
-			});
+            actionResult('success', { form });
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    delete: async (event: RequestEvent) => {
+        let success = false;
+        try {
+            await prisma.article.deleteMany({
+                where: {
+                    article_identifier: {
+                        id: Number(event.params.id)
+                    }
+                }
+            })
 
 			actionResult('redirect', '/article/all', 303);
 			success = true;
