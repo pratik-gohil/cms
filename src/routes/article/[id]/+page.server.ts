@@ -3,7 +3,7 @@ import { fail, redirect } from "@sveltejs/kit";
 
 import { BASE_URL } from "$env/static/private";
 import type { ArticleCategory } from "$lib/types/Category"
-import type { ArticleIdentifierWithCategory } from "$lib/types/common"
+import type { ArticleWithCategory } from "$lib/types/common"
 import type { LoadEvent } from "@sveltejs/kit";
 import type { SuperValidated } from "sveltekit-superforms";
 import { getFormSchemaWithDefaults, type FormSchema, formSchema } from "./schema";
@@ -13,7 +13,7 @@ import { writeFileSync } from "fs";
 import { retriveArticleData } from "$lib/utils/article";
 import { createArticle } from "$lib/controllers/Article";
 
-export async function load({ params }: LoadEvent): Promise<{ id: String | undefined, categories: ArticleCategory[], article?: ArticleIdentifierWithCategory, form: SuperValidated<FormSchema> }> {
+export async function load({ params }: LoadEvent): Promise<{ id: String | undefined, categories: ArticleCategory[], article?: ArticleWithCategory, form: SuperValidated<FormSchema> }> {
     const categoryResponse = await fetch(BASE_URL + '/api/categories')
     const { categories } = await categoryResponse.json();
 
@@ -24,7 +24,7 @@ export async function load({ params }: LoadEvent): Promise<{ id: String | undefi
         const articleResponse = await fetch(BASE_URL + "/api/article/" + params.id)
         article = (await articleResponse.json()).article;
 
-        formSchemaWithDefaults = getFormSchemaWithDefaults(article.article)
+        formSchemaWithDefaults = getFormSchemaWithDefaults(article)
     }
 
     form = await superValidate(formSchemaWithDefaults || formSchema)

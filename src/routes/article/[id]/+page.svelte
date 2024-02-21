@@ -13,8 +13,8 @@
 	$: ({ form, article } = data);
 
 	let selected: Selected<any> = {
-		value: data.article?.article.articleCategory.id as string,
-		label: data.article?.article.articleCategory.name as string
+		value: data.article?.articleCategory.id as string,
+		label: data.article?.articleCategory.name as string
 	};
 
 	const options: FormOptions<FormSchema> = {
@@ -119,7 +119,7 @@
 			modules,
 			formats,
 			theme: 'snow',
-			placeholder: 'Write your article...'
+			placeholder: 'Write your article?...'
 		});
 
 		// Add fonts to whitelist
@@ -136,7 +136,7 @@
 			};
 		}
 
-		quill.root.innerHTML = article?.article.articleContents || '';
+		quill.root.innerHTML = article?.articleContents || '';
 
 		quill.on('text-change', function () {
 			const correctULTagFromQuill = (str: string) => {
@@ -184,7 +184,7 @@
 </script>
 
 <FormLayout
-	entry={article?.article}
+	entry={article}
 	id={data.id}
 	action={data.id === 'new' ? '?/create' : '?/update'}
 	{form}
@@ -197,10 +197,10 @@
 			disabled={data.id === 'new' || loading}
 			type="submit"
 			name="publish"
-			value={(!article?.article?.isPublished).toString()}
+			value={(!article?.isPublished).toString()}
 			class="text-sm"
 		>
-			{#if article?.article?.isPublished}
+			{#if article?.isPublished}
 				Un-Publish
 			{:else}
 				Publish
@@ -304,12 +304,12 @@
 									on:change={(e) => onFileSelected(e)}
 								/>
 							</label>
-							{#if articleImage || article?.article.articleImageSrc}
+							{#if articleImage || article?.articleImageSrc}
 								<img
 									alt="aticleImage"
 									class="max-h-44 w-full flex-1 sm:w-1/2 lg:w-full 2xl:w-1/2"
 									src={(articleImage && articleImage.toString()) ||
-										'/articles/' + article?.article.articleImageSrc}
+										'/articles/' + article?.articleImageSrc}
 								/>
 							{/if}
 						</div>
@@ -341,7 +341,7 @@
 				<Form.Field {config} name="articleSlug">
 					<Form.Item>
 						<Form.Label>Slug:</Form.Label>
-						<Form.Input value={slugify(title || article?.article.articleTitle || '')} disabled />
+						<Form.Input value={slugify(title || article?.articleTitle || '')} disabled />
 						<Form.Validation />
 					</Form.Item>
 				</Form.Field>

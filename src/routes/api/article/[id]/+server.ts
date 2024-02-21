@@ -6,7 +6,8 @@ export async function GET({ params }: ServerLoadEvent) {
         where: {
             id: Number(params.id),
         },
-        include: {
+        select: {
+            id: true,
             article: {
                 include: {
                     articleCategory: true
@@ -15,7 +16,7 @@ export async function GET({ params }: ServerLoadEvent) {
         }
     })
 
-    return new Response(JSON.stringify({ success: true, article }), {
+    return new Response(JSON.stringify({ success: true, ...article }), {
         status: 200,
         headers: {
             'Content-Type': 'application/json'
