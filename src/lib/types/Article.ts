@@ -1,8 +1,3 @@
-export type ArticleCategory = {
-	id: String;
-	name: String;
-};
-
 export type Article = {
 	id: String;
 	isPublished: boolean;
@@ -14,12 +9,13 @@ export type Article = {
 	articleHrefURL: string;
 	articleImageTitle: string;
 	articleImageAlt: string;
-	createdAt: Date;
-	updatedAt: Date;
+
+	createdAt: Date,
+	updatedAt: Date,
 };
 
 export type ArticleIdentifier = {
-	id: number;
+	id: number,
 	articleId: string;
 	article: Article;
-};
+}

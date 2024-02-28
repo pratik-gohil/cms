@@ -55,7 +55,6 @@
 	
 	<div slot="action-buttons">
 		<Form.Button
-		disabled= {!name}
 			type="submit"
 			name="Create"
 			class="text-sm"

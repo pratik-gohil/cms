@@ -2,7 +2,6 @@ import prisma from '$lib/prisma';
 import { fail, redirect } from '@sveltejs/kit';
 
 import { BASE_URL } from '$env/static/private';
-import { ArticleCategory } from '$lib/types/Article';
 import type { ArticleIdentifierWithCategory } from '$lib/types/common';
 import type { LoadEvent } from '@sveltejs/kit';
 import type { SuperValidated } from 'sveltekit-superforms';
@@ -12,6 +11,7 @@ import type { RequestEvent } from './$types';
 import { writeFileSync } from 'fs';
 import { retriveArticleData } from '$lib/utils/article';
 import { createArticle } from '$lib/controllers/Article';
+import type { ArticleCategory } from '$lib/types/Category';
 
 export async function load({
 	params

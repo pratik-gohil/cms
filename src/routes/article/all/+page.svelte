@@ -127,7 +127,7 @@
 						<Table.Cell>{id}</Table.Cell>
 						<Table.Cell>{article.articleTitle}</Table.Cell>
 						<Table.Cell>
-							<Badge>{article.articleCategory.name}</Badge>
+							<Badge>{article.articleCategory?.name}</Badge>
 						</Table.Cell>
 						<Table.Cell>
 							<span

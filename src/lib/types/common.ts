@@ -1,12 +1,12 @@
-import type { Article } from './Article';
-import type { ArticleCategory } from './Category';
+import type { Article } from "./Article";
+import type { ArticleCategory } from "./Category";
 
 export type ArticleWithCategory = Article & {
-	articleCategory: ArticleCategory;
-};
+    articleCategory: ArticleCategory
+}
 
 export type ArticleIdentifierWithCategory = {
-	id: number;
-	articleId: string;
-	article: ArticleWithCategory;
+    id: number,
+    articleId: string;
+    article: ArticleWithCategory;
 };
