@@ -100,8 +100,8 @@
 
 {#if active === 'Grid'}
 	<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
-		{#each articles as { id, article }}
-			<a href={'/article/' + id}>
+		{#each articles as article}
+			<a href={'/article/' + article.article_identifier}>
 				<ArticleCard {article} />
 			</a>
 		{/each}
@@ -112,7 +112,7 @@
 			<Table.Caption>End of Table</Table.Caption>
 			<Table.Header>
 				<Table.Row>
-					<Table.Head>ID</Table.Head>
+					<Table.Head>Identifier</Table.Head>
 					<Table.Head>Title</Table.Head>
 					<Table.Head>Catrgory</Table.Head>
 					<Table.Head>Description</Table.Head>
@@ -123,12 +123,15 @@
 				</Table.Row>
 			</Table.Header>
 			<Table.Body>
-				{#each articles as { id, article }}
-					<Table.Row class="cursor-pointer" on:click={() => goto('/article/' + id)}>
-						<Table.Cell>{id}</Table.Cell>
+				{#each articles as article}
+					<Table.Row
+						class="cursor-pointer"
+						on:click={() => goto('/article/' + article.article_identifier)}
+					>
+						<Table.Cell>{article.article_identifier}</Table.Cell>
 						<Table.Cell>{article.articleTitle}</Table.Cell>
 						<Table.Cell>
-							<Badge>{article.articleCategory.name}</Badge>
+							<Badge>{article.articleCategory}</Badge>
 						</Table.Cell>
 						<Table.Cell>
 							<span

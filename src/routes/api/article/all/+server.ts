@@ -1,4 +1,6 @@
 import prisma from "$lib/prisma";
+import type { ArticleIdentifier } from "$lib/types/Article";
+import type { ArticleWithCategory } from "$lib/types/common";
 import type { RequestEvent } from "./$types";
 
 export async function GET(event: RequestEvent) {
@@ -7,43 +9,45 @@ export async function GET(event: RequestEvent) {
     const limit = Number(event.url.searchParams.get("limit")) || 15
 
     const articlesCountTransaction = await prisma.$transaction([
-        prisma.article_identifier.count({
+        prisma.article.count({
             where: {
-                article: {
-                    articleTitle: {
-                        ...(search && {
-                            contains: search,
-                            mode: 'insensitive',
-                        })
-                    }
+                articleTitle: {
+                    ...(search && {
+                        contains: search,
+                        mode: 'insensitive',
+                    })
                 }
             },
         }),
-        prisma.article_identifier.findMany({
+        prisma.article.findMany({
             take: limit,
             skip: limit * (page - 1),
             where: {
-                article: {
-                    articleTitle: {
-                        ...(search && {
-                            contains: search,
-                            mode: 'insensitive',
-                        })
-                    }
+                articleTitle: {
+                    ...(search && {
+                        contains: search,
+                        mode: 'insensitive',
+                    })
                 }
             },
-            select: {
-                id: true,
-                article: {
-                    include: {
-                        articleCategory: true,
-                    }
+            include: {
+                articleCategory: true,
+                article_identifier: {
+                    select: {
+                        id: true,
+                    },
                 }
             }
-        }),
+        })
     ])
 
-    const [count, articles] = articlesCountTransaction;
+    let [count, articles] = articlesCountTransaction;
+
+    articles = articles.map((article: (ArticleWithCategory & { article_identifier: ArticleIdentifier })) => ({
+        ...article,
+        articleCategory: article.articleCategory.name,
+        article_identifier: article.article_identifier.id
+    }))
 
     return new Response(JSON.stringify({ success: true, articles, count }), {
         status: 200,

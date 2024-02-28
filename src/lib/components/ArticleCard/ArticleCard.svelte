@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { ArticleWithCategory } from '$lib/types/common';
+	import type { Article } from '$lib/types/Article';
 	import { cn } from '$lib/utils/common';
 	import Badge from '../ui/badge/badge.svelte';
 
-	export let article: ArticleWithCategory;
+	export let article: Article & { articleCategory: string };
 </script>
 
 <div class="relative h-full rounded border p-4">
@@ -12,7 +12,7 @@
 			{article.articleTitle}
 		</h1>
 		<Badge class="ml-auto h-fit whitespace-nowrap">
-			{article.articleCategory.name}
+			{article.articleCategory}
 		</Badge>
 	</div>
 	<p class="mb-6 text-sm">
